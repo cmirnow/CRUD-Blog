@@ -1,0 +1,40 @@
+<% @visits.each do |visit| %>
+  Visit Number: <%= visit.id %><br>
+  Visit Token: <%= visit.visit_token %><br>
+  Visitor Token: <%= visit.visitor_token %><br>
+  IP: <%= visit.ip %><br>
+  User Agent: <%= visit.user_agent %><br>
+  Referrer: <%= visit.referrer %><br>
+  Referring domain: <%= visit.referring_domain %><br>
+  Device Type: <%= visit.device_type %><br>
+  Country: <%= visit.country %><br>
+  Region: <%= visit.region %><br>
+  City: <%= visit.city %><br>
+  Latitude: <%= visit.latitude %><br>
+  Longitude: <%= visit.longitude %><br>
+  User ID: <%= visit.user_id %><br>
+<% end %>
+<hr>
+
+<% @events.each do |i| %>
+  Time: <%= i.time %> <br>
+  Properties: <%= i.properties %> <br>
+  ID: <%= i.id %> <br>
+  Name: <%= i.name %> <br>
+  <% end %> 
+
+<%= @browsers %>
+
+<p><strong>Last 10 events:</strong></p>
+<ul>
+  <% Ahoy::Event.last(10).each do |e| %>
+    <li><%= "Event #{e.id} for user: #{e.user_id}" %></li>
+  <% end %>
+</ul>
+
+<p><strong>Last visits:</strong></p>
+<ul>
+  <% Ahoy::Visit.all.each do |v| %>
+    <li><%= "Visit #{v.id} for user: #{v.user_id}" %></li>
+  <% end %>
+</ul>

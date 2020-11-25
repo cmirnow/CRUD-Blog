@@ -1,0 +1,18 @@
+<%#= @post.title.html_safe %>
+<%#= @post.text.html_safe %>
+<%#= @post.created_at %>
+<%#= @post.updated_at %>
+
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <%= @post.text.html_safe %>
+        </div>
+      </div>
+    </div>
+  </article>
+
+<%= @www %>
