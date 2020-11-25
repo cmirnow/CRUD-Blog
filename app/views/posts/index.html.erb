@@ -2,11 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-<% @all_ids.each do |i| %>
+<% @all_ids.sort_by(&:to_i).each do |i| %>
   <div class="post-preview">
           <a href="<%= '/posts/' + i.to_s %>">
             <h2 class="post-title">
-              <%= Post.find(i).title.html_safe %>
+              <%= Post.find(i).title %>
             </h2>
             <!-- <h3 class="post-subtitle">
               <%#= sanitize(Post.find(i).text[0,80]) %>
