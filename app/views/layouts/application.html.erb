@@ -8,11 +8,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
   <!-- Custom fonts for this template -->
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  
   <!-- Custom styles for this template -->
   <link href="/css/clean-blog.min.css" rel="stylesheet">
   </head>
@@ -30,7 +28,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <% @rq.each do |i| %>
+          <% @articles.each do |i| %>
           <li class="nav-item">
             <a class="nav-link" href="/posts/<%= + i.id.to_s %>"><%= i.title.to_s %></a>
           </li>
@@ -42,7 +40,6 @@
   <% end %>
 
   <!-- Page Header -->
-  
   <header class="masthead" style="background-image: url(<%= @result %>); cursor: pointer" onclick='window.location.href="https://masterpro.ws"' target="_blank" >
     <div class="overlay"></div>
     <div class="container">
