@@ -1,11 +1,15 @@
-
-  <!-- Post Content -->
-  <article>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <%= @post.text.html_safe %>
-        </div>
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <%= @post.text.html_safe %>
+          <hr>
+          <h2>Comments</h2>
+          <%= render @post.comments %>
+          <h3>Add a comment:</h3>
+          <%= render 'comments/form' %>
       </div>
     </div>
-  </article>
+  </div>
+</article>

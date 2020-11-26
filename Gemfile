@@ -31,6 +31,7 @@ gem 'devise'
 gem 'activeadmin_quill_editor'
 gem 'ahoy_matey'
 gem 'font_awesome5_rails'
+gem 'simple_form'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
