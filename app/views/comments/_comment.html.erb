@@ -1,9 +1,8 @@
 <div class="card">
   <div class="card-header">
-    <%= comment.commenter %>
+    <small><%= comment.commenter + ' posted it ' + time_ago_in_words(comment.created_at) %> ago.</small>
   </div>
   <div class="card-body">
     <p class="card-text"><%= comment.body %></p>
   </div>
 </div>
-<p>
