@@ -32,6 +32,8 @@ gem 'activeadmin_quill_editor'
 gem 'ahoy_matey'
 gem 'font_awesome5_rails'
 gem 'simple_form'
+gem "recaptcha", require: "recaptcha/rails"
+gem 'figaro'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

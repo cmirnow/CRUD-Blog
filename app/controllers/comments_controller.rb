@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
-    #if verify_recaptcha
+    if verify_recaptcha
     @comment = @post.comments.create(comment_params)
     redirect_to post_path(@post)
     flash.notice = 'You have added a comment!'
-    #else
-    #redirect_to post_path(@post)
-  #end
+    else
+    redirect_to post_path(@post)
+  end
   end
   
   def destroy

@@ -41,3 +41,5 @@ yarn-debug.log*
 .yarn-integrity
 
 /vendor/bundle
+# Ignore application configuration
+/config/application.yml

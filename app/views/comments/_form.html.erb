@@ -3,7 +3,7 @@
     <%= f.input :commenter, :label => "Nickname", placeholder: 'Enter your nickname', required: true %>
     <%= f.input :body, :label => "Your comment", placeholder: 'Enter your comment', required: true %>
   <p>
-  <%#= recaptcha_tags %>
+  <%= recaptcha_tags %>
   </p>
   <div class="btn btn-light">
     <%= f.button :submit, 'Send' %>
