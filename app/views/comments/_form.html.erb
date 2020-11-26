@@ -1,19 +1,17 @@
 <%= simple_form_for([@post, @post.comments.build]) do |f| %>
 <%= f.error_notification %>
-    <%= f.input :commenter, :label => "Nickname", placeholder: 'Enter your nickname', required: true %>
-    <%= f.input :body, :label => "Your comment", placeholder: 'Enter your comment', required: true %>
-      <div class="container">
-  <% flash.each do |type, msg| %>
-    <div class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissable fade show">
+<%= f.input :commenter, :label => "Nickname", placeholder: 'Enter your nickname', required: true %>
+<%= f.input :body, :label => "Your comment", placeholder: 'Enter your comment', required: true %>
+<div class="container">
+   <% flash.each do |type, msg| %>
+   <div class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissable fade show">
       <%= msg %>
       <button class="close" data-dismiss="alert">x</button>
-    </div>
-  <% end %> 
+   </div>
+   <% end %>
 </div>
-  <p>
-  <%= recaptcha_tags %>
-  </p>
-  <div class="btn btn-light">
-    <%= f.button :submit, 'Send' %>
+<%= recaptcha_tags %>
+<div class="btn btn-light">
+   <%= f.button :submit, 'Send' %>
+</div>
 <% end %>
-  </div>
