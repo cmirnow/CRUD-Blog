@@ -3,8 +3,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     articles
     banner
-    
-    @current_visit = current_visit
+    #@current_visit = current_visit
   end
 
   def index
@@ -18,13 +17,12 @@ class PostsController < ApplicationController
   end
 
   def banner
-    c = country
-    @result = '/images/' + GetImages.get_country(c) + '/' + GetImages.get_random_banner(c)
+    x = country
+    @result = '/images/' + GetImages.get_country(x) + '/' + GetImages.get_random_banner(x)
   end
 
   def country
-    #Geoip.get_country_by_ip(request.remote_ip)
-    Geoip.get_country_by_ip(current_visit.country)
+    current_visit.country
   end
 
   private

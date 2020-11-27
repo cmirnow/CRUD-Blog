@@ -8,7 +8,7 @@ class GetImages
   end
 
   def self.get_country(country)
-    if %w[UnitedKingdom UnitedStates Russia Netherlands].include? country
+    if %w[GB US RU NL].include? country
       country
     else
       'other'
