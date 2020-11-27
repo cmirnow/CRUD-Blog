@@ -46,8 +46,9 @@
               <% else %>
                   <div class="post-heading">
                     <h1><%= @post.title.html_safe %></h1>
-                    <h2 class="subheading">Geo-Targeted Banner Ads. Live Demo</h2> <span class="meta">Posted 
-              on <%= @post.created_at %></span> </div>
+                    <h3 class="subheading">Geo-Targeted Banner Ads. Live Demo</h3> <span class="meta">
+                      Posted on <%= @post.created_at %><br>
+                      <%= @updated_on %></span> </div>
               <% end %>
             </div>
           </div>

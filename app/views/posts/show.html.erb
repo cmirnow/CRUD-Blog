@@ -5,9 +5,9 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <%= @post.text.html_safe %>
           <hr>
-          <h2>Comments</h2>
+          <h4>Comments</h4>
           <%= render @post.comments %>
-          <h3>Add a comment:</h3>
+          <h5>Add a comment:</h5>
           <%= render 'comments/form' %>
       </div>
     </div>

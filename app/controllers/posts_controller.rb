@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     articles
     banner
-    #@current_visit = current_visit
+    @updated_on = 'Updated on ' + @post.updated_at.to_s if @post.updated_at != @post.created_at
   end
 
   def index
