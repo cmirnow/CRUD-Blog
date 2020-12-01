@@ -16,25 +16,27 @@
 <% end %>
 <hr>
 
-<% @events.each do |i| %>
-  Time: <%= i.time %> <br>
-  Properties: <%= i.properties %> <br>
-  ID: <%= i.id %> <br>
-  Name: <%= i.name %> <br>
-  <% end %> 
-
 <%= @browsers %>
+
+<%# @events.each do |i| %>
+  Time: <%#= i.time %> <br>
+  Properties: <%#= i.properties %> <br>
+  ID: <%#= i.id %> <br>
+  Name: <%#= i.name %> <br>
+  <%# end %> 
+
+
 
 <p><strong>Last 10 events:</strong></p>
 <ul>
-  <% Ahoy::Event.last(10).each do |e| %>
-    <li><%= "Event #{e.id} for user: #{e.user_id}" %></li>
-  <% end %>
+  <%# Ahoy::Event.last(10).each do |e| %>
+    <li><%#= "Event #{e.id} for user: #{e.user_id}" %></li>
+  <%# end %>
 </ul>
 
 <p><strong>Last visits:</strong></p>
 <ul>
-  <% Ahoy::Visit.all.each do |v| %>
-    <li><%= "Visit #{v.id} for user: #{v.user_id}" %></li>
-  <% end %>
+  <%# Ahoy::Visit.all.each do |v| %>
+    <li><%#= "Visit #{v.id} for user: #{v.user_id}" %></li>
+  <%# end %>
 </ul>
