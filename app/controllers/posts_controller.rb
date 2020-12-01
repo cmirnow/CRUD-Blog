@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def country
-    current_visit.country
+    current_visit&.country
   end
 
   private
