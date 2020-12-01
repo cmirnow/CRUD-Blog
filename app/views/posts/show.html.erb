@@ -6,7 +6,8 @@
             <%= @post.text.html_safe %>
             <small>Tags: 
             <% @post.tag_list.each do |tag| %>
-            <%= link_to tag, tag_url(tag) %> 
+            <%= link_to tag, tag_url(tag) %>
+            (<%= Post.tagged_with(tag).count %>)
             <% end %>
             </small>
             <hr>
