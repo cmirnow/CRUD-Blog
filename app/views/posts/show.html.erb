@@ -1,15 +1,20 @@
 <!-- Post Content -->
 <article>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <%= @post.text.html_safe %>
-          <hr>
-          <h4>Comments</h4>
-          <%= render @post.comments %>
-          <h5>Add a comment:</h5>
-          <%= render 'comments/form' %>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-md-10 mx-auto">
+            <%= @post.text.html_safe %>
+            <small>Tags: 
+            <% @post.tag_list.each do |tag| %>
+            <%= link_to tag, tag_url(tag) %> 
+            <% end %>
+            </small>
+            <hr>
+            <h4>Comments</h4>
+            <%= render @post.comments %>
+            <h5>Add a comment:</h5>
+            <%= render 'comments/form' %>
+         </div>
       </div>
-    </div>
-  </div>
+   </div>
 </article>

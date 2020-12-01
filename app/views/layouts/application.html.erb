@@ -15,7 +15,7 @@
 
 <body>
   <!-- Navigation -->
-  <% if params[:id].present? %>
+  <% if params[:id] == params[:id].to_i.to_s %>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <%= link_to "Start Page", root_path, :class => "navbar-brand" %>
@@ -45,10 +45,14 @@
                   <h1>Live Demo Blog</h1> <span class="subheading">Geo-Targeted Banner Ads</span> </div>
               <% else %>
                   <div class="post-heading">
+                    <% if params[:id] == params[:id].to_i.to_s %>
                     <h1><%= @post.title.html_safe %></h1>
                     <h3 class="subheading">Geo-Targeted Banner Ads. Live Demo</h3> <span class="meta">
                       Posted on <%= @post.created_at %><br>
                       <%= @updated_on %></span> </div>
+                      <% else %>
+                      <h1>Tag#<%= params[:id] %></h1>
+                      <% end %>
               <% end %>
             </div>
           </div>

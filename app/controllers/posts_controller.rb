@@ -17,8 +17,7 @@ class PostsController < ApplicationController
   end
 
   def banner
-    x = country
-    @result = '/images/' + GetImages.get_country(x) + '/' + GetImages.get_random_banner(x)
+    @result = GetImages.banner(country)
   end
 
   def country

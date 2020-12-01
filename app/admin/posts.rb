@@ -4,7 +4,7 @@ ActiveAdmin.register Post do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :text
+  permit_params :title, :text, :tag_list
   #
   # or
   #
@@ -16,6 +16,7 @@ ActiveAdmin.register Post do
   # ActiveAdmin article form conf:
   form do |f|
     f.inputs 'Article' do
+      f.input :tag_list, :input_html => {:value => f.object.tag_list.join(", ") }, :label => "Tags (separated by commas)".html_safe
       f.input :title
       f.input :text, as: :quill_editor, input_html: { data:
         { options:

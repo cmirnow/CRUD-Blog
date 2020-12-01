@@ -1,0 +1,27 @@
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% @articles.each do |i| %>
+        <div class="post-preview">
+          <a href="<%= '/posts/' + i.id.to_s %>">
+            <h2 class="post-title">
+              <%= i.title %>
+            </h2>
+            <!-- <h3 class="post-subtitle">
+              <%#= sanitize(Post.find(i).text[0,80]) %>
+            </h3> --></a>
+          <p class="post-meta">Posted on
+            <%= i.created_at %>
+          </p>
+        </div>
+        <hr>
+      <% end %>
+          <!-- Pager 
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div> -->
+      </div>
+  </div>
+</div>
+<hr>

@@ -14,4 +14,8 @@ class GetImages
       'other'
     end
   end
+
+  def self.banner(x)
+    '/images/' + get_country(x) + '/' + GetImages.get_random_banner(x)
+  end
 end
