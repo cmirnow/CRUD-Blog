@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'analytics/index'
-  get 'feed.rss', controller: 'feed', action: 'rss', format: 'rss'
+  get 'feed.rss', controller: 'feeds', action: 'rss', format: 'rss'
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :tags, only: [:show]

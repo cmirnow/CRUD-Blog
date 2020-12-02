@@ -1,4 +1,4 @@
-class FeedController < ApplicationController
+class FeedsController < ApplicationController
   layout false
 
   def rss
