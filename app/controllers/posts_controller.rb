@@ -5,13 +5,17 @@ class PostsController < ApplicationController
     banner
     @updated_on = 'Updated on ' + @post.updated_at.to_s if @post.updated_at != @post.created_at
     metatags
+    check
   end
 
   def index
     @all_ids = Post.ids
-    articles
     banner
     metatags
+  end
+
+  def check
+    @check = 1 if BuildHtml.params_check(params[:id], @post)
   end
 
   def metatags

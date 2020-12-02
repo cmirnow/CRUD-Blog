@@ -17,7 +17,7 @@
 
 <body>
   <!-- Navigation -->
-  <% if BuildHtml.params_check(params[:id], @post) %>
+  <% if defined?(@check) %>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <%= link_to "Start Page", root_path, :class => "navbar-brand" %>
@@ -26,9 +26,7 @@
             <ul class="navbar-nav ml-auto">
               <% @articles.each do |i| %>
                 <li class="nav-item">
-                  <a class="nav-link" href="/posts/<%= + i.id.to_s %>">
-              <%= i.title.to_s %>
-                  </a>
+                  <%= link_to i.title, "#{i.id}", :class => "nav-link" %>
                 </li>
               <% end %>
             </ul>
@@ -47,7 +45,7 @@
                   <h1>Live Demo Blog</h1> <span class="subheading">Geo-Targeted Banner Ads</span> </div>
               <% else %>
                   <div class="post-heading">
-                    <% if BuildHtml.params_check(params[:id], @post) %>
+                    <% if defined?(@check) %>
                     <h1><%= @post.title.html_safe %></h1>
                     <h3 class="subheading">Geo-Targeted Banner Ads. Live Demo</h3> <span class="meta">
                       Posted on <%= @post.created_at %><br>
