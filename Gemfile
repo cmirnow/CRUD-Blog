@@ -35,6 +35,7 @@ gem 'simple_form'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'figaro'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'meta-tags'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
