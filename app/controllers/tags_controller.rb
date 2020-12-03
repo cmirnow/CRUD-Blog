@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
   def show
     banner
-    @articles = Post.tagged_with(params[:id])
+    @posts = Post.tagged_with(params[:id])
   end
 
   def banner
