@@ -2,14 +2,6 @@
 <%= f.error_notification %>
 <%= f.input :commenter, :label => "Nickname", placeholder: 'Enter your nickname', required: true %>
 <%= f.input :body, :label => "Your comment", placeholder: 'Enter your comment', required: true %>
-<div class="container">
-   <% flash.each do |type, msg| %>
-   <div class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissable fade show">
-      <%= msg %>
-      <button class="close" data-dismiss="alert">x</button>
-   </div>
-   <% end %>
-</div>
 <%= recaptcha_tags %>
 <div class="btn btn-light">
    <%= f.button :submit, 'Send' %>
