@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
+  post 'contacts/index'
   get 'analytics/index'
   get 'feed.rss', controller: 'feeds', action: 'rss', format: 'rss'
   devise_for :users, ActiveAdmin::Devise.config
@@ -8,4 +10,5 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+  resources :contacts
 end

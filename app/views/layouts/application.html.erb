@@ -29,6 +29,9 @@
                   <%= link_to i.title, "#{i.id}", :class => "nav-link" %>
                 </li>
               <% end %>
+              <li class="nav-item">
+                <%= link_to "Контакты", contacts_url %>
+              </li>
             </ul>
           </div>
       </div>
@@ -58,6 +61,14 @@
           </div>
         </div>
       </header>
+<div class="container">
+   <% flash.each do |type, msg| %>
+   <div class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissable fade show">
+      <%= msg %>
+      <button class="close" data-dismiss="alert">x</button>
+   </div>
+   <% end %>
+</div>
       <%= yield %>
         <!-- Footer -->
 <footer>
