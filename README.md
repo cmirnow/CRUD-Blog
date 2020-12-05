@@ -9,6 +9,7 @@
 * Built-in visit analytics
 * Comments
 * Tags
+* RSS
 * SEO
 
 [Demo & Description (in Russian)](https://mstp.herokuapp.com).
