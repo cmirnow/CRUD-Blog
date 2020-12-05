@@ -27,4 +27,5 @@ SitemapGenerator::Sitemap.create do
   Post.find_each do |content|
     add post_path(content), :lastmod => content.updated_at
   end
+  add contacts_path, :priority => 0.5, :changefreq => 'weekly'
 end

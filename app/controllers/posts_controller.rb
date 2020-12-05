@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def check
-    @check = 1 if BuildHtml.params_check(params[:id], @post)
+    @check = 1 if BuildHtml.params_check(params[:id], @post) || { controller: 'contacts', action: 'index' }
   end
 
   def metatags
