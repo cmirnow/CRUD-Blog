@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     if verify_recaptcha
       @comment = @post.comments.create(comment_params)
       redirect_to post_path(@post)
-      flash.notice = 'You have added a comment!'
+      flash[:notice] = 'You have added a comment!'
     else
       redirect_to post_path(@post)
     end

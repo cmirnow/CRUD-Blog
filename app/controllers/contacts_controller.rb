@@ -9,8 +9,8 @@ class ContactsController < ApplicationController
       respond_to do |format|
         if @contact.save
           FormMailer.with(form: @contact).new_form_email.deliver_later
-          format.html { redirect_to contacts_url }
-          flash.notice = 'Thank you, your email has been sent.'
+          format.html { redirect_to :controller => "contacts", :action => "index" }
+          flash[:notice] = 'Thank you, your email has been sent.'
         end
       end
     end
