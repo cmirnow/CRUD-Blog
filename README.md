@@ -7,6 +7,7 @@
 * Geo-Targeted Banner ADS
 * Text editor
 * Built-in visit analytics
+* Articles
 * Comments
 * Tags
 * RSS
