@@ -6,17 +6,10 @@
         <h2 class="section-heading h1 pt-4">Contact us</h2>
         <!--Section description-->
         <p class="section-description">Если черкнуть письмецо - уйдет администратору на email, дополнительно сохранится в базе данных сайта.<br>Читать можно как в почте, так и в панели Active Admin.</p>
-        <%= form_with(model: contact, local: true) do |form| %>
-        <% if contact.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-            <ul>
-                <% contact.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-            </ul>
+        <div id="flash-message">
+            <%= render 'shared/flash' %>
         </div>
-        <% end %>
+        <%= simple_form_for @contact, remote: true do |f| %>
             <div class="row">
                 <!--Grid column-->
                 <div class="col-md-8 col-xl-9">
@@ -26,7 +19,7 @@
                         <div class="col-md-6">
                             <div class="md-form">
                                 <div class="md-form">
-                                    <%= form.text_field :name, placeholder: "Your Name", class: 'form-control', required: true %>
+                                    <%= f.text_field :name, placeholder: "Your Name", class: 'form-control', required: true %>
                                         <%= label(:name, :name) %>
                                 </div>
                             </div>
@@ -36,7 +29,7 @@
                         <div class="col-md-6">
                             <div class="md-form">
                                 <div class="md-form">
-                                    <%= form.text_field :email, placeholder: "Email Address", class: 'form-control', required: true %>
+                                    <%= f.text_field :email, placeholder: "Email Address", class: 'form-control', required: true %>
                                         <%= label(:email, :email) %>
                                 </div>
                             </div>
@@ -48,7 +41,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="md-form">
-                                <%= form.text_field :subject, placeholder: "Message Subject", class: 'form-control', required: true %>
+                                <%= f.text_field :subject, placeholder: "Message Subject", class: 'form-control', required: true %>
                                     <%= label(:subject, :subject) %>
                             </div>
                         </div>
@@ -59,7 +52,7 @@
                         <!--Grid column-->
                         <div class="col-md-12">
                             <div class="md-form">
-                                <%= form.text_area :message, placeholder: "Your Message", class: 'md-textarea', required: true %>
+                                <%= f.text_area :message, placeholder: "Your Message", class: 'md-textarea', required: true %>
                                     <%= label(:message, :message) %>
                             </div>
                         </div>
@@ -68,7 +61,7 @@
                     </form>
                     <%= recaptcha_tags %>
                         <div class="center-on-small-only">
-                            <%= form.submit :Send, class: 'btn' %>
+                            <%= f.submit :Send, class: 'btn' %>
                         </div>
         <% end %>
                 </div>
@@ -92,4 +85,5 @@
     </section>
     <!--Section: Contact v.2-->
 </div>
+
 <script type="text/javascript" src="/js/contact_form/mdb.js"></script>

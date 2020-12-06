@@ -9,12 +9,16 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    if verify_recaptcha
+    unless verify_recaptcha
       respond_to do |format|
         if @contact.save
+
           FormMailer.with(form: @contact).new_form_email.deliver_later
-          format.html { redirect_to controller: 'contacts', action: 'index' }
-          flash[:notice] = 'Thank you, your email has been sent.'
+          format.html { render 'index' }
+          format.js   { flash.now[:success] = 'Thank you for your message.' }
+        else
+          format.html { render 'index' }
+          format.js { flash.now[:error] = 'Message did not send.' }
         end
       end
     end
