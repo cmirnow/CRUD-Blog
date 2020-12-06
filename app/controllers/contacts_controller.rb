@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    unless verify_recaptcha
+    if verify_recaptcha
       respond_to do |format|
         if @contact.save
 
