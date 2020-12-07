@@ -59,9 +59,9 @@
                     </div>
                     <!--Grid row-->
                     </form>
-                    <%= recaptcha_tags %>
+                    <%= recaptcha_tags :callback => "enableBtn" %>
                         <div class="center-on-small-only">
-                            <%= f.submit :Send, class: 'btn' %>
+                            <%= f.submit :Send, class: 'btn', id: 'button1', disabled: 'disabled' %>
                         </div>
         <% end %>
                 </div>
@@ -87,3 +87,4 @@
 </div>
 
 <script type="text/javascript" src="/js/contact_form/mdb.js"></script>
+<script type="text/javascript" src="/js/contact_form/btn_enable.js"></script>
