@@ -17,10 +17,19 @@ class ContactsController < ApplicationController
           format.html { render 'index' }
           format.js   { flash.now[:success] = 'Thank you for your message.' }
         else
+
           format.html { render 'index' }
-          format.js { flash.now[:error] = 'Message did not send.' }
+          format.js { flash.now[:error] = see_errors(@contact) }
         end
       end
+    end
+  end
+
+  def see_errors(x)
+    if x.errors.any?
+      view_context.pluralize(x.errors.count, 'error').to_s +
+        ' prohibited this call from being send: ' +
+        x.errors.full_messages.map { |i| %('#{i}') }.join(',')
     end
   end
 
