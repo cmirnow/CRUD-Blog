@@ -3,10 +3,21 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     if verify_recaptcha
       @comment = @post.comments.create(comment_params)
-      redirect_to post_path(@post)
-      flash[:notice] = 'You have added a comment!'
-    else
-      redirect_to post_path(@post)
+      respond_to do |format|
+        if @comment.save
+          format.js   { flash.now[:success] = 'You have added a comment!' }
+        else
+          format.js { flash.now[:error] = see_errors(@comment) }
+        end
+      end
+    end
+  end
+
+  def see_errors(x)
+    if x.errors.any?
+      view_context.pluralize(x.errors.count, 'error').to_s +
+        ' prohibited this call from being send: ' +
+        x.errors.full_messages.map { |i| %('#{i}') }.join(',')
     end
   end
 

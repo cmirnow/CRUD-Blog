@@ -12,13 +12,9 @@ class ContactsController < ApplicationController
     if verify_recaptcha
       respond_to do |format|
         if @contact.save
-
           FormMailer.with(form: @contact).new_form_email.deliver_later
-          format.html { render 'index' }
           format.js   { flash.now[:success] = 'Thank you for your message.' }
         else
-
-          format.html { render 'index' }
           format.js { flash.now[:error] = see_errors(@contact) }
         end
       end

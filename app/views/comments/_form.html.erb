@@ -1,7 +1,10 @@
-<%= simple_form_for([@post, @post.comments.build]) do |f| %>
+<div id="flash-message">
+   <%= render 'shared/flash' %>
+</div>
+<%= simple_form_for([@post, @post.comments.build], remote: true) do |f| %>
 <%= f.error_notification %>
-<%= f.input :commenter, :label => "Nickname", placeholder: 'Enter your nickname', required: true %>
-<%= f.input :body, :label => "Your comment", placeholder: 'Enter your comment', required: true %>
+<%= f.input :commenter, :label => "Nickname", placeholder: 'Enter your nickname' %>
+<%= f.input :body, :label => "Your comment", placeholder: 'Enter your comment' %>
 <%= recaptcha_tags :callback => "enableBtn" %>
 <div class="center-on-small-only">
    <%= f.submit :Send, class: 'btn', id: 'sbm', disabled: 'disabled' %>
