@@ -3,4 +3,4 @@ console.log("This is the create.js.erb file");
 // Render flash message
 $('#form').html("<%= j render 'form' %>");
 $("#new_comment")[0].reset();
-$('#flash-message').html("<%= j render 'shared/flash' %>").delay(4000).fadeOut(4000);
+$('#flash-message').html("<%= j render 'shared/flash' %>").delay(4000).fadeOut(4000).css({display:"block"});
