@@ -4,3 +4,4 @@ console.log("This is the create.js.erb file");
 $('#form').html("<%= j render 'form' %>");
 $("#new_comment")[0].reset();
 $('#flash-message').html("<%= j render 'shared/flash' %>").delay(4000).fadeOut(4000).css({display:"block"});
+grecaptcha.reset();
