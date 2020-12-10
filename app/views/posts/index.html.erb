@@ -2,17 +2,17 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <% @all_ids.sort_by(&:to_i).each do |i| %>
+      <% @articles.each do |i| %>
         <div class="post-preview">
-          <a href="<%= '/posts/' + i.to_s %>">
+          <a href="<%= '/posts/' + i.title %>">
             <h2 class="post-title">
-              <%= Post.find(i).title %>
+              <%= i.title %>
             </h2>
             <!-- <h3 class="post-subtitle">
               <%#= sanitize(Post.find(i).text[0,80]) %>
             </h3> --></a>
           <p class="post-meta">Posted on
-            <%= Post.find(i).created_at %>
+            <%= i.created_at %>
           </p>
         </div>
         <hr>

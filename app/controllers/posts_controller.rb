@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     articles
     banner
     @updated_on = 'Updated on ' + @post.updated_at.to_s if @post.updated_at != @post.created_at
@@ -9,9 +9,10 @@ class PostsController < ApplicationController
   end
 
   def index
-    @all_ids = Post.ids
+    #@all_ids = Post.ids
     banner
     metatags
+    articles
   end
 
   def check
