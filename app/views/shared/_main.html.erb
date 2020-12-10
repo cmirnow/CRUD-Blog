@@ -1,0 +1,25 @@
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% @articles.each do |i| %>
+        <div class="post-preview">
+          <%= link_to :controller => :posts, :action => :show, :id => i.slug do %>
+            <h2 class="post-title">
+              <%= i.title %>
+            </h2>
+          <% end %>
+          <p class="post-meta">Posted on
+            <%= i.created_at %>
+          </p>
+        </div>
+        <hr>
+      <% end %>
+          <!-- Pager 
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div> -->
+      </div>
+  </div>
+</div>
+<hr> 
