@@ -93,5 +93,5 @@ Now login:
 Finally, create a sitemap:
 
 ```
-rake sitemap:install
+rake sitemap:refresh
 ```
