@@ -5,7 +5,7 @@
         <!--Section heading-->
         <h2 class="section-heading h1 pt-4">Contact us</h2>
         <!--Section description-->
-        <p class="section-description">Если черкнуть письмецо - уйдет администратору на email, дополнительно сохранится в базе данных сайта.<br>Читать можно как в почте, так и в панели Active Admin.</p>
+        <p class="section-description">Черкните письмецо.<br>Уйдет администратору на email, дополнительно сохранится в базе данных сайта, прочесть можно как в почте, так и в панели Active Admin.<br>Помимо HTML5 валидаций, также включена проверка и на сервере: если, например, ошибиться в синтаксисе email - сработают Active Record Validations, получите через ajax переданный flash-message об ошибке.<br>Кнопка SEND заблокирована вплоть до успешного прохождения recaptcha, после каждой новой попытки recaptcha перезагружается.</p>
         <div id="flash-message">
             <%= render 'shared/flash' %>
         </div>
@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <div class="md-form">
                                 <%= f.text_field :subject, placeholder: "Message Subject", class: 'form-control', required: true %>
-                                    <%= label(:subject, :subject) %>
+                                    <%= label(:subject, 'Subject, at least 5 characters') %>
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="col-md-12">
                             <div class="md-form">
                                 <%= f.text_area :message, placeholder: "Your Message", class: 'md-textarea', required: true %>
-                                    <%= label(:message, :message) %>
+                                    <%= label(:message, 'Your message should be at least 15 characters in length') %>
                             </div>
                         </div>
                     </div>
