@@ -4,7 +4,7 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <% @articles.each do |i| %>
         <div class="post-preview">
-          <a href="<%= '/posts/' + i.title %>">
+          <a href="<%= '/posts/' + i.slug %>">
             <h2 class="post-title">
               <%= i.title %>
             </h2>

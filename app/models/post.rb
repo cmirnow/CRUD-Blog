@@ -7,4 +7,9 @@ class Post < ApplicationRecord
   acts_as_taggable_on :tag
   extend FriendlyId
   friendly_id :title, use: :slugged
+
+  def normalize_friendly_id(title)
+    title.to_s.to_slug.normalize(transliterations: :russian).to_s
+  end
+
 end

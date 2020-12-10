@@ -29,7 +29,7 @@
             <ul class="navbar-nav ml-auto">
               <% @articles.each do |i| %>
                 <li class="nav-item">
-                  <%= link_to i.title, { :controller => "posts", :action => "show", :id => i.title }, :class => "nav-link" %>
+                  <%= link_to i.title, { :controller => "posts", :action => "show", :id => i.slug }, :class => "nav-link" %>
                 </li>
               <% end %>
               <li class="nav-item">

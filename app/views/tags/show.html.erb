@@ -5,7 +5,7 @@
 			<% @posts.each do |i| %>
 				<div class="post-preview">
 					<h2 class="post-title">
-						<%= link_to i.title, {controller: "posts", action: "show", id: i.title} %>
+						<%= link_to i.title, {controller: "posts", action: "show", id: i.slug} %>
 					</h2>
 					<!--<h2 class="post-title">
               <%#= i.title %>
