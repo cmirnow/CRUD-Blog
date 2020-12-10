@@ -12,7 +12,8 @@
 * Comments
 * Tags
 * RSS
-* SEO
+* User-Friendly URLs
+* Sitemap
 
 [Demo & Description (in Russian)](https://mstp.herokuapp.com).
 
