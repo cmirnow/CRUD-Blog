@@ -34,7 +34,7 @@ class ContactsController < ApplicationController
   end
 
   def banner
-    @result = GetImages.banner(country)
+    @banner = GetImages.get_random_banner(country)
   end
 
   def country

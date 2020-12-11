@@ -5,11 +5,10 @@ class TagsController < ApplicationController
   end
 
   def banner
-    x = country
-    @result = '/images/' + GetImages.get_country(x) + '/' + GetImages.get_random_banner(x)
+    @banner = GetImages.get_random_banner(country)
   end
 
   def country
-    current_visit.country
+    current_visit&.country
   end
 end

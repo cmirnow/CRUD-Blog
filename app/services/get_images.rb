@@ -1,10 +1,7 @@
 class GetImages
-  def self.get_image_paths(d)
-    Dir.children(File.join(Rails.root, d))
-  end
-
   def self.get_random_banner(country)
-    get_image_paths('/public/images/' + get_country(country)).sample
+    x = get_country(country)
+    File.join('/images', x, Dir.children(File.join(File.join(Rails.root, 'public', 'images'), x)).sample)
   end
 
   def self.get_country(country)
@@ -13,9 +10,5 @@ class GetImages
     else
       'other'
     end
-  end
-
-  def self.banner(x)
-    '/images/' + get_country(x) + '/' + GetImages.get_random_banner(x)
   end
 end

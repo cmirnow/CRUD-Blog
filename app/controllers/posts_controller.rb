@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    #@all_ids = Post.ids
+    # @all_ids = Post.ids
     banner
     metatags
     articles
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   def banner
-    @result = GetImages.banner(country)
+    @banner = GetImages.get_random_banner(country)
   end
 
   def country
