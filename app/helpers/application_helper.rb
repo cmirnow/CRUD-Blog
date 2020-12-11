@@ -13,4 +13,8 @@ module ApplicationHelper
       flash_type.to_s
     end
   end
+
+  def scroll_up
+    link_to image_tag("up-arrow.png"), "#", {id: 'back-to-top', class: 'back-to-top', role: 'button'}
+  end
 end
