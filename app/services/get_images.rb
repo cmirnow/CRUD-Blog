@@ -4,8 +4,6 @@ class GetImages
     File.join('/images', x, Dir.children(File.join(Rails.root, 'public', 'images', x)).sample)
   end
 
- 
-
   def self.get_country(country)
     if %w[GB US RU NL].include? country
       country
