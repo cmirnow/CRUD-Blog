@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
       @comment = @post.comments.create(comment_params)
       respond_to do |format|
         if @comment.save
+          CommentMailer.with(comment: @comment).new_comment_email.deliver_later
           format.js   { flash.now[:success] = 'You have added a comment!' }
         else
           format.js { flash.now[:error] = see_errors(@comment) }

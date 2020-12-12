@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>You got a new comment from <%= @comment.commenter %>!</p>
+    <p>
+    comment details<br>
+    --------------------------
+    </p>
+    <p>NickName: <%= @comment.commenter %></p>
+    <p>
+    Message:<br>
+    ----------
+    </p>
+    <p><%= @comment.body %></p>
+  </body>
+</html> 
