@@ -7,9 +7,9 @@
 * Geo-Targeted Banner ADS
 * Text editor
 * Built-in visit analytics
-* AJAX Contact Form
 * Articles
-* Comments
+* AJAX Contact Form
+* AJAX Comments
 * Notifications of new comments by email
 * Tags
 * RSS
