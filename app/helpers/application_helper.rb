@@ -20,9 +20,13 @@ module ApplicationHelper
 
   def buttons
     if current_page?(controller: 'posts')
-      link_to 'Older Posts', { controller: :archive }, class: 'btn btn-light float-right'
-    elsif current_page?(controller: 'archive')
-      link_to 'To the Main', { controller: :posts }, class: 'btn btn-light float-right'
+      link_to 'All Articles', archive_index_path, :class => btn
+    elsif current_page?(archive_index_path)
+      link_to 'To the Main', "/", :class => btn
     end
+  end
+
+  def btn
+    "btn btn-light float-right"
   end
 end

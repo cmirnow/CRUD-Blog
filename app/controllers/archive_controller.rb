@@ -5,6 +5,6 @@ class ArchiveController < ApplicationController
   end
 
   def articles
-    @articles = Post.last(1)
+    @articles = Post.order(created_at: :desc)
   end
 end
