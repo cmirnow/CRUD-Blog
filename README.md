@@ -76,6 +76,7 @@ GMAIL_PASSWORD: '************'
 DOMAIN_NAME: 'https://mstp.herokuapp.com' #For example
 SEND_EMAIL_TO: '****@*********'
 SUBJECT_EMAIL: 'Hurray! You got a new form!'
+SUBJECT_COMMENT_EMAIL: 'You got a new comment!'
 ```
 
 OK, let's go:
