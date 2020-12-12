@@ -311,6 +311,7 @@ DEPENDENCIES
   friendly_id (~> 5.4.0)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
+  kaminari
   listen (~> 3.2)
   meta-tags
   pg

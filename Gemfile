@@ -39,6 +39,7 @@ gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'friendly_id', '~> 5.4.0'
 gem 'babosa'
+gem 'kaminari'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

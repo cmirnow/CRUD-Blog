@@ -8,6 +8,7 @@
 * Text editor
 * Built-in visit analytics
 * Articles
+* Pagination of the list of articles
 * AJAX Contact Form
 * AJAX Comments
 * Notifications of new comments by email

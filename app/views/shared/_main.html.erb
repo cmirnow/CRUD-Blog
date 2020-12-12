@@ -1,5 +1,8 @@
 <!-- Main Content -->
 <div class="container">
+  <div class="clearfix">
+    <%= buttons %>
+  </div>
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <% @articles.each do |i| %>
@@ -9,16 +12,16 @@
               <%= i.title %>
             </h2>
           <% end %>
-          <p class="post-meta">Posted on
-            <%= i.created_at %>
-          </p>
+            <p class="post-meta">Posted on
+              <%= i.created_at %>
+            </p>
         </div>
         <hr>
       <% end %>
-        <div class="clearfix">
-          <%= buttons %>
-        </div>
-      </div>
+          <div class="clearfix">
+            <%= paginate @articles if current_page?(:controller => :archive) %>
+          </div>
+    </div>
   </div>
 </div>
-<hr> 
+<hr>
