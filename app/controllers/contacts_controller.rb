@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   def index
     @contact = Contact.new
-    @articles = Post.first(10)
+    @articles = Post.first(5)
     check
     banner
     metatags
@@ -31,14 +31,6 @@ class ContactsController < ApplicationController
 
   def check
     @check = 1 if BuildHtml.params_check(params[:id], @post) || { controller: 'contacts', action: 'index' }
-  end
-
-  def banner
-    @banner = GetImages.get_random_banner(country)
-  end
-
-  def country
-    current_visit&.country
   end
 
   def metatags
