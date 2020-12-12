@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'archive/index'
   get 'contacts/index'
   post 'contacts/index'
   get 'analytics/index'

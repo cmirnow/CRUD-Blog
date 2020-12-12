@@ -12,4 +12,12 @@ class ApplicationController < ActionController::Base
   def track_event
     ahoy.track 'New event', request.path_parameters
   end
+
+  def banner
+    @banner = GetImages.get_random_banner(country)
+  end
+
+  def country
+    current_visit&.country
+  end
 end

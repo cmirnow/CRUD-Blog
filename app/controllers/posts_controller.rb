@@ -26,15 +26,7 @@ class PostsController < ApplicationController
   end
 
   def articles
-    @articles = Post.first(10)
-  end
-
-  def banner
-    @banner = GetImages.get_random_banner(country)
-  end
-
-  def country
-    current_visit&.country
+    @articles = Post.first(5)
   end
 
   private
