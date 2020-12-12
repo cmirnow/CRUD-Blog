@@ -10,6 +10,7 @@
 * AJAX Contact Form
 * Articles
 * Comments
+* Notifications of new comments by email
 * Tags
 * RSS
 * User-Friendly URLs
