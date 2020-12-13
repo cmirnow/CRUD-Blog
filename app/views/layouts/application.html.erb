@@ -41,6 +41,7 @@
     </nav>
   <% end %>
       <!-- Page Header -->
+      <% unless current_page?(controller: 'contacts') %>
       <header class="masthead" style="background-image: url(<%= @banner %>); cursor: pointer" onclick='window.location.href="https://masterpro.ws"' target="_blank">
         <div class="overlay"></div>
         <div class="container">
@@ -64,6 +65,9 @@
           </div>
         </div>
       </header>
+      <% else %>
+      <%= render 'shared/map' %>
+      <% end %>
 
       <%= yield %>
         <!-- Footer -->

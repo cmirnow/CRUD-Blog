@@ -5,6 +5,20 @@ class ContactsController < ApplicationController
     check
     banner
     metatags
+    @coord = coord
+    weather(coord[0], coord[1])
+  end
+
+  def coord
+    if current_visit.latitude.nil?
+      ['59.93863', '30.31413']
+    else
+      [current_visit.latitude, current_visit.longitude]
+    end
+  end
+
+  def weather(*args)
+    @hash = Openweathermap.current_weather_data(*args)
   end
 
   def create
