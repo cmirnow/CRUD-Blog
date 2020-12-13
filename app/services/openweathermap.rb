@@ -7,9 +7,9 @@ class Openweathermap
 
   def self.url(*args)
     'http://api.openweathermap.org/data/2.5/weather?lat=' +
-      args[0] +
+      args[0].to_s +
       '&lon=' +
-      args[1] +
+      args[1].to_s +
       '&appid=' +
       ENV['KEY_OPENWEATHERMAP'] +
       '&units=metric'
