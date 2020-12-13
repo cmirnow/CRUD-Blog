@@ -8,6 +8,7 @@ var map;
        zoom: 12,
      });
      map.panBy(0,-100);
+     mapTypeControl: false;
      var contentString = '<div id="content">'+
          '<div id="bodyContent">'+
          '<div><img src="https://openweathermap.org/img/w/<%= @hash["weather"][0]["icon"] %>.png" title="<%= @hash["weather"][0]["description"] %>" ></div>'+
