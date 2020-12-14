@@ -8,17 +8,22 @@ var map;
        zoom: 12,
        disableDefaultUI: true
      });
-     map.panBy(0,-100);
+     map.panBy(0,-150);
      var contentString = '<div id="content">'+
          '<div id="bodyContent">'+
-         '<div><img src="https://openweathermap.org/img/w/<%= @hash["weather"][0]["icon"] %>.png" title="<%= @hash["weather"][0]["description"] %>" ></div>'+
-         '<div><%= @hash["weather"][0]["main"] %></div>'+
-         '<div>Temperature: <%= @hash["main"]["temp"] %> °С</div>'+
-         '<div>Pressure: <%= @hash["main"]["pressure"] %> hPa</div>'+
-         '<div>Humidity: <%= @hash["main"]["pressure"] %> %</div>'+
+         '<div><%= image_tag('https://openweathermap.org/img/w/' + @obj["weather"][0]["icon"] + '.png', title: @obj["weather"][0]["description"]) %></div>'+
+         '<div><%= @obj["weather"][0]["main"] %></div>'+
+         '<div>Temperature: <%= @obj["main"]["temp"] %> °С</div>'+
+         '<div>Pressure: <%= @obj["main"]["pressure"] %> hPa</div>'+
+         '<div>Cloudness: <%= @obj["clouds"]["all"] %> %</div>'+
+         '<div>Humidity: <%= @obj["main"]["pressure"] %> %</div>'+
+         '<div>Visibility: <%= @obj["visibility"] %> meter</div>'+
+         '<div>Wind: <%= @obj["wind"]["speed"] %> m/s</div>'+
+         '<div>Sunrise: <%= Time.at(@obj["sys"]["sunrise"]) %></div>'+
+         '<div>Sunset: <%= Time.at(@obj["sys"]["sunset"]) %></div>'+
          '<hr>'+
-         '<div><%= @hash["name"] %></div>'+
-         '<div>Coordinates: <%= @hash["coord"]["lat"] %>, <%= @hash["coord"]["lon"] %></div>'
+         '<div><%= @obj["name"] %></div>'+
+         '<div>Coordinates: <%= @obj["coord"]["lat"] %>, <%= @obj["coord"]["lon"] %></div>'
          '</div></div>';
      var infowindow = new google.maps.InfoWindow({
        content: contentString

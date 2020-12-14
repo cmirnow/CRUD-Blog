@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
   end
 
   def weather(*args)
-    @hash = Openweathermap.current_weather_data(*args)
+    @obj = Openweathermap.current_weather_data(*args)
   end
 
   def create
