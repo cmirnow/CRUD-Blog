@@ -13,6 +13,7 @@
 * AJAX Comments
 * Notifications of new comments by email
 * Tags
+* Meta Tags
 * RSS
 * User-Friendly URLs
 * Sitemap
