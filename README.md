@@ -80,6 +80,8 @@ DOMAIN_NAME: 'https://mstp.herokuapp.com' #For example
 SEND_EMAIL_TO: '****@*********'
 SUBJECT_EMAIL: 'Hurray! You got a new form!'
 SUBJECT_COMMENT_EMAIL: 'You got a new comment!'
+KEY_OPENWEATHERMAP: '*******************************'
+GOOGLE_MAP_KEY: '*************************************'
 ```
 
 OK, let's go:
