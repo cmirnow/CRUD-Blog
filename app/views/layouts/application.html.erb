@@ -41,7 +41,7 @@
     </nav>
   <% end %>
       <!-- Page Header -->
-      <% unless current_page?(controller: 'contacts') %>
+      <% unless show_weather? %>
       <header class="masthead" style="background-image: url(<%= @banner %>); cursor: pointer" onclick='window.location.href="<%= ENV['HYPERLINK_BANNER'] %>"'>
         <div class="overlay"></div>
         <div class="container">

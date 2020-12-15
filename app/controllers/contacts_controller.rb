@@ -10,11 +10,7 @@ class ContactsController < ApplicationController
   end
 
   def coord
-    if current_visit.latitude.nil?
-      ['59.93863', '30.31413']
-    else
-      [current_visit.latitude, current_visit.longitude]
-    end
+    [current_visit.latitude, current_visit.longitude]
   end
 
   def weather(*args)

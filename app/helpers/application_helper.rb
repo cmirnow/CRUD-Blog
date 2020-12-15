@@ -20,13 +20,17 @@ module ApplicationHelper
 
   def buttons
     if current_page?(controller: 'posts')
-      link_to 'All Articles', archive_index_path, :class => btn
+      link_to 'All Articles', archive_index_path, class: btn
     elsif current_page?(archive_index_path) || current_page?(controller: 'tags', action: 'show')
-      link_to 'To the Main', "/", :class => btn
+      link_to 'To the Main', '/', class: btn
     end
   end
 
   def btn
-    "btn btn-light float-right"
+    'btn btn-light float-right'
+  end
+
+  def show_weather?
+    current_page?(controller: 'contacts') && !current_visit.latitude.nil?
   end
 end
