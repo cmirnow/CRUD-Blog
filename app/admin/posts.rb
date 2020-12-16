@@ -34,7 +34,8 @@ ActiveAdmin.register Post do
                [{ 'color': [] }, { 'background': [] }],
                [{ 'font': [] }],
                ['clean'],
-               ['image']] },
+               ['image'],
+               ['video']] },
             theme: 'snow' } } }
       # f.input :published
     end
