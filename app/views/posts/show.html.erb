@@ -5,6 +5,9 @@
       <div class="row">
          <div class="col-lg-8 col-md-10 mx-auto">
             <h1 class="articles"><%= title @post.title %></h1>
+            <% if @post.image.attached? %>
+            <img src="<%= (url_for(@post.image))%>" class="article_title_image">
+            <% end %>
             <%= @post.text.html_safe %>
             <small>Tags: 
             <% @post.tag_list.each do |tag| %>
