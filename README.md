@@ -12,6 +12,7 @@
 * AJAX Contact Form
 * AJAX Comments
 * Notifications of new comments by email
+* Upload images to base64, to local storage, to AWS S3
 * Tags
 * Meta Tags
 * RSS
