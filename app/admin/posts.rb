@@ -68,7 +68,7 @@ ActiveAdmin.register Post do
   show do
     attributes_table do
       row :image do |ad|
-        image_tag url_for(ad.image), class: 'image_preview'
+        image_tag url_for(ad.image), class: 'image_preview' if ad.image.present?
       end
       row :title
       row :created_at
