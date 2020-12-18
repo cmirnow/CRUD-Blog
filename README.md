@@ -83,6 +83,9 @@ SUBJECT_EMAIL: 'Hurray! You got a new form!'
 SUBJECT_COMMENT_EMAIL: 'You got a new comment!'
 KEY_OPENWEATHERMAP: '*******************************'
 GOOGLE_MAP_KEY: '*************************************'
+AWS_ACCESS_KEY_ID: '********************'
+AWS_SECRET_ACCESS_KEY: '*********************************'
+RAILS_MASTER_KEY: '************************'
 ```
 
 OK, let's go:
