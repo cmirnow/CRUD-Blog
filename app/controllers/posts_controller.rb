@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.friendly.find(params[:id])
+    @post = Post.published.friendly.find(params[:id])
     articles
     banner
     @updated_on = 'Updated on ' + @post.updated_at.to_s if @post.updated_at != @post.created_at
