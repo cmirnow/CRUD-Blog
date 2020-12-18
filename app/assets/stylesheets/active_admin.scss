@@ -17,3 +17,8 @@
 //   .status_tag { background: #6090DB; }
 @import 'activeadmin/quill_editor/quill.snow';
 @import 'activeadmin/quill_editor_input';
+
+.image_preview {
+    width: 30%;
+    border: solid 3px #d4d4d4;
+}

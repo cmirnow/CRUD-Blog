@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def articles
-    @articles = Post.first(5)
+    @articles = Post.published.first(5)
   end
 
   private

@@ -5,6 +5,6 @@ class TagsController < ApplicationController
   end
 
   def articles
-    @articles = Post.tagged_with(params[:id])
+    @articles = Post.published.tagged_with(params[:id])
   end
 end
