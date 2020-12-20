@@ -14,7 +14,7 @@ ActiveAdmin.register Post do
     link_to 'Publish', publish_admin_post_path(post), method: :put unless post.published_at?
   end
 
-  action_item :publish, only: :show do
+  action_item :unpublish, only: :show do
     link_to 'Unpublish', unpublish_admin_post_path(post), method: :put if post.published_at?
   end
 
