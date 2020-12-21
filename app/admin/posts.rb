@@ -1,10 +1,5 @@
 ActiveAdmin.register Post do
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  permit_params :title, :text, :tag_list, :image, :published_at
+  permit_params :title, :text, :tag_list, :published_at, images: []
 
   scope :all
   scope :published
@@ -18,6 +13,10 @@ ActiveAdmin.register Post do
     link_to 'Unpublish', unpublish_admin_post_path(post), method: :put if post.published_at?
   end
 
+  action_item :delete_image, only: :show do
+    link_to 'Delete Image', delete_image_admin_post_path(post), method: :delete if post.images.attached?
+  end
+
   member_action :publish, method: :put do
     post = Post.friendly.find(params[:id])
     post.update(published_at: Time.zone.now)
@@ -29,15 +28,14 @@ ActiveAdmin.register Post do
     post.update(published_at: nil)
     redirect_to admin_post_path(post)
   end
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:title, :text]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  # ActiveAdmin article form conf:
+
+  member_action :delete_image, method: :delete do
+    post = Post.friendly.find(params[:id])
+    asset = ActiveStorage::Attachment.find_by(params[:attachment_id])
+    asset&.purge
+    redirect_to admin_post_path(post)
+  end
+
   form do |f|
     f.inputs 'Article' do
       f.input :tag_list, input_html: { value: f.object.tag_list.join(', ') }, label: 'Tags (separated by commas)'.html_safe
@@ -61,14 +59,20 @@ ActiveAdmin.register Post do
                ['image'],
                ['video']] },
             theme: 'snow' } } }
-      f.input :image, as: :file
+      f.input :images, as: :file, input_html: { multiple: true }
     end
     f.actions
   end
-  show do
+  show do |t|
     attributes_table do
-      row :image do |ad|
-        image_tag url_for(ad.image), class: 'image_preview' if ad.image.present?
+      if t.images.attached?
+        row 'images' do |m|
+          m.images.each do |img|
+            span do
+              image_tag(img, class: 'img_preview')
+            end
+          end
+        end
       end
       row :title
       row :created_at
