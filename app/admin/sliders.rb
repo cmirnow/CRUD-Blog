@@ -32,7 +32,7 @@ ActiveAdmin.register Slider do
   member_action :delete_image, method: :delete do
     slider = Slider.find(params[:id])
     asset = ActiveStorage::Attachment.find_by(params[:attachment_id])
-    asset&.purge
+    asset&.purge_later
     redirect_to admin_slider_path(slider)
   end
 
