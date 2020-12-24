@@ -22,7 +22,7 @@ module ApplicationHelper
     if current_page?(controller: 'posts')
       link_to 'All Articles', archive_index_path, class: btn
     elsif current_page?(archive_index_path) || current_page?(controller: 'tags', action: 'show')
-      link_to 'To the Main', '/', class: btn
+      link_to 'To the Main', '/', class: btn, data: { turbolinks: 'false' }
     end
   end
 
@@ -30,7 +30,11 @@ module ApplicationHelper
     'btn btn-light float-right'
   end
 
-  def show_weather?
+  def show_map?
     current_page?(controller: 'contacts') && !current_visit.latitude.nil?
+  end
+
+  def show_slider?
+    current_page?('/')
   end
 end

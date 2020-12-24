@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     banner
     metatags
     articles
+    slider
   end
 
   def check
@@ -27,6 +28,10 @@ class PostsController < ApplicationController
 
   def articles
     @articles = Post.published.first(5)
+  end
+
+  def slider
+    @slider = Slider.published.find_by_name('slider_one')
   end
 
   private

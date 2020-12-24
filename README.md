@@ -19,6 +19,7 @@
 * User-Friendly URLs
 * Sitemap
 * Current Weather by IP on Google Map
+* SlideShow
 
 [Demo & Description (in Russian)](https://mstp.herokuapp.com).
 
