@@ -44,7 +44,7 @@
           <%= render 'shared/slider', collection: @slider %>
         </header>
         <% elsif !show_map? %>
-          <header class="masthead" style="background-image: url(<%= @banner %>); cursor: pointer" onclick='window.location.href="<%= ENV[' HYPERLINK_BANNER '] %>"'>
+          <header class="masthead" style="background-image: url(<%= @banner %>); cursor: pointer" onclick='window.location.href="<%= ENV['HYPERLINK_BANNER'] %>"'>
             <div class="overlay"></div>
             <div class="container">
               <div class="row">
