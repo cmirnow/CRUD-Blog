@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <%= display_meta_tags site: 'Blog on Rails' %>
     <%= csrf_meta_tags %>
@@ -15,102 +14,47 @@
             <!-- RSS -->
             <link href="/feed.rss" rel="alternate" title="RSS feed" type="application/rss+xml">
 </head>
-
 <body>
-  <!-- Navigation -->
-  <% if defined?(@check) %>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <%= link_to "Start Page", root_path, :class => "navbar-brand", :data => {turbolinks: 'false'} %>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i class="fas fa-bars"></i> </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <% @articles.each do |i| %>
-                <li class="nav-item">
-                  <%= link_to i.title, { :controller => "posts", :action => "show", :id => i.slug }, :class => "nav-link" %>
-                </li>
-              <% end %>
-                <li class="nav-item">
-                  <%= link_to "Contacts", { :controller => "contacts" }, :class => "nav-link" %>
-                </li>
-            </ul>
-          </div>
-      </div>
-    </nav>
-  <% end %>
-      <!-- Page Header -->
-      <% if show_slider? %>
-        <header class="masthead">
-          <%= render 'shared/slider', collection: @slider %>
-        </header>
-        <% elsif !show_map? %>
-          <header class="masthead" style="background-image: url(<%= @banner %>); cursor: pointer" onclick='window.location.href="<%= ENV['HYPERLINK_BANNER'] %>"'>
-            <div class="overlay"></div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                  <% if params[:id].nil? %>
-                    <div class="site-heading">
-                      <h1>Live Demo Blog</h1> <span class="subheading">Geo-Targeted Banner Ads</span> </div>
-                    <% else %>
-                    <div class="post-heading">
-                      <% if defined?(@check) %>
-                          <h1><%= @post.title.html_safe %></h1>
-                          <h3 class="subheading">Geo-Targeted Banner Ads. Live Demo</h3>
-                          <span class="meta">Posted on <%= @post.created_at %><br><%= @updated_on %></span>
-                    </div>
-                      <% else %>
-                        <h1>Tag#<%= params[:id] %></h1>
-                      <% end %>
-                    <% end %>
-                </div>
-              </div>
-            </div>
-          </header>
-          <% else %>
-            <%= render 'shared/map' %>
-              <% end %>
-                <%= yield %>
-                  <!-- Footer -->
-                  <footer>
-                    <div class="container">
-                      <div class="row">
-                        <a href="/feed.rss">
-                          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-rss" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                            <path d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                            <path fill-rule="evenodd" d="M2.5 3.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z" /> </svg>
-                        </a>
-                        <div class="col-lg-8 col-md-10 mx-auto">
-                          <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                              <a href="https://twitter.com/cmirnow" target="_blank"> <span class="fa-stack fa-lg">
+	<!-- Navigation -->
+	<%= render 'shared/navigation' %>
+		<!-- Page Header -->
+		<%= render 'shared/header' %>
+			<%= yield %>
+				<!-- Footer -->
+				<footer>
+					<div class="container">
+						<div class="row">
+							<%= render 'shared/rss_feed' %>
+								<div class="col-lg-8 col-md-10 mx-auto">
+									<ul class="list-inline text-center">
+										<li class="list-inline-item">
+											<a href="https://twitter.com/cmirnow" target="_blank"> <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
                 </span> </a>
-                            </li>
-                            <li class="list-inline-item">
-                              <a href="https://www.facebook.com/cmirnow" target="_blank"> <span class="fa-stack fa-lg">
+										</li>
+										<li class="list-inline-item">
+											<a href="https://www.facebook.com/cmirnow" target="_blank"> <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
                 </span> </a>
-                            </li>
-                            <li class="list-inline-item">
-                              <a href="https://github.com/cmirnow/CRUD-Blog" target="_blank"> <span class="fa-stack fa-lg">
+										</li>
+										<li class="list-inline-item">
+											<a href="https://github.com/cmirnow/CRUD-Blog" target="_blank"> <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-github fa-stack-1x fa-inverse"></i>
                 </span> </a>
-                            </li>
-                          </ul>
-                          <p class="copyright text-muted">Copyright &copy;
-                            <%= link_to "Masterpro.ws", "https://masterpro.ws", target: "_blank" %> 2020 - 2021</p>
-                        </div>
-                      </div>
-                    </div>
-                  </footer>
-                  <!-- Custom scripts for this template -->
-                  <%= scroll_up %>
-                    <script src="/js/clean-blog.min.js"></script>
-                    <script src="/js/scroll_up.js"></script>
+										</li>
+									</ul>
+									<p class="copyright text-muted">Copyright &copy;
+										<%= link_to "Masterpro.ws", "https://masterpro.ws", target: "_blank" %> 2020 - 2021</p>
+								</div>
+						</div>
+					</div>
+				</footer>
+				<!-- Custom scripts for this template -->
+				<%= scroll_up %>
+					<script src="/js/clean-blog.min.js"></script>
+					<script src="/js/scroll_up.js"></script>
 </body>
 </html>
