@@ -31,8 +31,8 @@ ActiveAdmin.register Post do
 
   member_action :delete_image, method: :delete do
     post = Post.friendly.find(params[:id])
-    asset = ActiveStorage::Attachment.find_by(params[:attachment_id])
-    asset&.purge_later
+    #asset = ActiveStorage::Attachment.find_by(params[:attachment_id])
+    post.images.purge_later
     redirect_to admin_post_path(post)
   end
 
