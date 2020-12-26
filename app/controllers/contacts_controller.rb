@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   def index
     @contact = Contact.new
-    @articles = Post.first(5)
+    @articles = Post.published.first(5)
     check
     banner
     metatags
