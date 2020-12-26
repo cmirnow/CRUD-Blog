@@ -72,5 +72,11 @@ img {
   bottom:0;
   left:0;
   right:0;
-  background:rgba(0,0,0,0.3);
+  background:rgba(0,0,0,0.1);
+}
+
+.spinner-grow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
 }

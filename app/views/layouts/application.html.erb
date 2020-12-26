@@ -15,6 +15,10 @@
             <link href="/feed.rss" rel="alternate" title="RSS feed" type="application/rss+xml">
 </head>
 <body>
+	<!-- Spinner -->
+	<div class="spinner-grow text-secondary" role="status">
+		<span class="sr-only">Loading...</span>
+	</div>
 	<!-- Navigation -->
 	<%= render 'shared/navigation' %>
 		<!-- Page Header -->
@@ -31,8 +35,7 @@
 				</footer>
 				<!-- Custom scripts for this template -->
 				<%= scroll_up %>
-<script src="/js/clean-blog.min.js"></script>
-<script src="/js/scroll_up.js"></script>
-
+				<script src="/js/clean-blog.min.js"></script>
+				<script src="/js/scroll_up.js"></script>
 </body>
 </html>
