@@ -64,19 +64,16 @@ img {
   width:100%;
   max-height: 550px !important;
 }
-.carousel-item:after {
-  content:"";
-  display:block;
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  background:rgba(0,0,0,0.1);
-}
 
 .spinner-grow {
   position: absolute;
   top: 30%;
   left: 50%;
+}
+
+.slider {
+  width:100%;
+  height:550px;
+  margin-bottom: 2rem;
+  background-color: #fff;
 }
