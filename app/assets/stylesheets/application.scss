@@ -66,9 +66,13 @@ img {
 }
 
 .spinner-grow {
-  position: absolute;
-  top: 30%;
-  left: 50%;
+position: absolute;
+top: 270px;
+left: 50%;
+margin-top: -1.5rem;
+margin-left: -1.5rem;
+width: 3rem;
+height: 3rem;
 }
 
 .slider {
