@@ -35,6 +35,6 @@ module ApplicationHelper
   end
 
   def show_slider?
-    current_page?('/')
+    current_page?('/') && slider_present?
   end
 end
