@@ -46,13 +46,11 @@ ActiveAdmin.register Slider do
   show do |t|
     attributes_table do
       if t.images.attached?
-        row 'images' do |m|
-          m.images.each do |img|
+          t.images.each do |img|
             span do
-              image_tag(img, class: 'img_preview')
+              image_tag img.variant(resize_to_limit: [100, 100])
             end
           end
-        end
       end
       row :name
       row :created_at
