@@ -1,5 +1,9 @@
 # CRUD Blog on Rails. Geo-Targeted Banner Ads
 
+
+[![CRUD Blog on Rails. Geo-Targeted Banner Ads](https://github.com/cmirnow/CRUD-Blog/blob/master/public/images/management_images_active_storage.jpg)](https://masterpro.ws/create-blog-on-rails)
+
+
 ## Features
 
 * Convenient site administration panel
