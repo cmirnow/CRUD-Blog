@@ -13,8 +13,8 @@ ActiveAdmin.register Slider do
     link_to 'Unpublish', unpublish_admin_slider_path(slider), method: :put if slider.published_at?
   end
 
-  action_item :delete_image, only: :show do
-    link_to 'Delete Image', delete_image_admin_slider_path(slider), method: :delete if slider.images.attached?
+  action_item :delete_images, only: :show do
+    link_to 'Delete Images', delete_images_admin_slider_path(slider), method: :delete if slider.images.attached?
   end
 
   member_action :publish, method: :put do
@@ -29,9 +29,9 @@ ActiveAdmin.register Slider do
     redirect_to admin_slider_path(slider)
   end
 
-  member_action :delete_image, method: :delete do
+  member_action :delete_images, method: :delete do
     slider = Slider.find(params[:id])
-    #asset = ActiveStorage::Attachment.find_by(params[:attachment_id])
+    # asset = ActiveStorage::Attachment.find_by(params[:attachment_id])
     slider.images.purge_later
     redirect_to admin_slider_path(slider)
   end

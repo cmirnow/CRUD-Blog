@@ -14,6 +14,11 @@ module ApplicationHelper
     end
   end
 
+  def show_navigation?
+    (controller.controller_name == 'posts' && controller.action_name == 'show') ||
+      controller_name == 'contacts'
+  end
+
   def scroll_up
     link_to image_tag('up-arrow.png'), '#', { id: 'back-to-top', class: 'back-to-top', role: 'button' }
   end
@@ -21,8 +26,9 @@ module ApplicationHelper
   def buttons
     if current_page?(controller: 'posts')
       link_to 'All Articles', archive_index_path, class: btn
-    elsif current_page?(archive_index_path) || current_page?(controller: 'tags', action: 'show')
-      link_to 'To the Main', '/', class: btn, data: { turbolinks: 'false' }
+    elsif current_page?(archive_index_path) ||
+          current_page?(controller: 'tags', action: 'show')
+      link_to 'To the Main', root_path, class: btn, data: { turbolinks: 'false' }
     end
   end
 
@@ -35,6 +41,6 @@ module ApplicationHelper
   end
 
   def show_slider?
-    current_page?('/') && slider_present?
+    current_page?(root_path) && slider_present?
   end
 end

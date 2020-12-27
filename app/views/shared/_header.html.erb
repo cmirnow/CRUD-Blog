@@ -17,7 +17,7 @@
 							</div>
 						<% else %>
 								<div class="post-heading">
-								<% if defined?(@check) %>
+								<% if show_navigation? %>
 										<h1><%= @post.title.html_safe %></h1>
 										<h3 class="subheading">Geo-Targeted Banner Ads. Live Demo</h3><span class="meta">Posted on <%= @post.created_at %><br><%= @updated_on %></span> 
 								</div>

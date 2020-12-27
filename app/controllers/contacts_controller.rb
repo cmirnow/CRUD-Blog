@@ -2,7 +2,6 @@ class ContactsController < ApplicationController
   def index
     @contact = Contact.new
     @articles = Post.published.first(5)
-    check
     banner
     metatags
     @coord = coord
@@ -37,10 +36,6 @@ class ContactsController < ApplicationController
         ' prohibited this call from being send: ' +
         x.errors.full_messages.map { |i| %('#{i}') }.join(',')
     end
-  end
-
-  def check
-    @check = 1 if BuildHtml.params_check(params[:id], @post) || { controller: 'contacts', action: 'index' }
   end
 
   def metatags
