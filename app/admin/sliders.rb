@@ -65,5 +65,6 @@ ActiveAdmin.register Slider do
       row :updated_at
       row :published_at
     end
+    para 'Click the preview to delete the image.'
   end
 end
