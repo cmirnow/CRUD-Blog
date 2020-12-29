@@ -36,6 +36,12 @@ ActiveAdmin.register Slider do
     redirect_to admin_slider_path(slider)
   end
 
+  member_action :delete_image, method: :delete do
+    slider = Slider.find_by(params[:name])
+    slider.images[params[:id].to_i].purge_later
+    redirect_to admin_slider_path(slider)
+  end
+
   form do |f|
     f.inputs 'Slider' do
       f.input :name
@@ -46,11 +52,13 @@ ActiveAdmin.register Slider do
   show do |t|
     attributes_table do
       if t.images.attached?
-          t.images.each do |img|
-            span do
+        t.images.each_with_index do |img, index|
+          span do
+            link_to delete_image_admin_slider_path(index), method: :delete do
               image_tag img.variant(resize_to_limit: [100, 100])
             end
           end
+        end
       end
       row :name
       row :created_at
