@@ -24,6 +24,7 @@
 * Sitemap
 * Current Weather by IP on Google Map
 * SlideShow
+* Lightbox
 
 [Demo & Description (in Russian)](https://mstp.herokuapp.com).
 
