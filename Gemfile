@@ -41,6 +41,7 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'babosa'
 gem 'kaminari'
 gem 'aws-sdk-s3'
+gem 'lightbox2-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

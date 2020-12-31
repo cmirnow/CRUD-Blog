@@ -7,7 +7,9 @@
             <h1 class="articles"><%= title @post.title %></h1>
             <% if @post.images.attached? %>
             <% @post.images.each do |img| %>
-            <%= image_tag(img, class:"img_article") %>
+            <%= link_to img, "data-lightbox" => @post.title do %>
+            <%= image_tag(img, class: "img_article") %>
+            <% end %>
             <% end %>
             <% end %>
             <%= @post.text.html_safe %>
