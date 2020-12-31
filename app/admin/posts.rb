@@ -1,5 +1,6 @@
 ActiveAdmin.register Post do
   permit_params :title, :text, :tag_list, :published_at, images: []
+  remove_filter :comments, :images_attachments, :images_blobs, :taggings, :tag_taggings, :base_tags, :slug
 
   scope :all
   scope :published

@@ -1,5 +1,6 @@
 ActiveAdmin.register Slider do
   permit_params :published_at, :name, images: []
+  remove_filter :images_attachments, :images_blobs
 
   scope :all
   scope :published
