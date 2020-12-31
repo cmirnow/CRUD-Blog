@@ -1,4 +1,3 @@
-<%= render 'shared/flash' %>
 <!-- Post Content -->
 <article>
    <div class="container">
@@ -6,11 +5,17 @@
          <div class="col-lg-8 col-md-10 mx-auto">
             <h1 class="articles"><%= title @post.title %></h1>
             <% if @post.images.attached? %>
-            <% @post.images.each do |img| %>
-            <%= link_to img, "data-lightbox" => @post.title do %>
-            <%= image_tag(img, class: "img_article") %>
-            <% end %>
-            <% end %>
+               <div class="preview">
+                  <ul>
+                     <% @post.images.each do |img| %>
+                        <li>
+                           <%= link_to img, "data-lightbox" => @post.title do %>
+                              <%= image_tag(img) %>
+                           <% end %>
+                        </li>
+                     <% end %>
+                  </ul>
+               </div>
             <% end %>
             <%= @post.text.html_safe %>
             <small>Tags: 
@@ -19,14 +24,12 @@
             (<%= Post.tagged_with(tag).count %>)
             <% end %>
             </small>
-            <hr>
-            <h4>Comments</h4>
-            <%= render @post.comments %>
-            <h5>Add a comment:</h5>
-            <%= render 'comments/form' %>
+                     <hr>
+                     <h4>Comments</h4>
+                     <%= render @post.comments %>
+                     <h5>Add a comment:</h5>
+                     <%= render 'comments/form' %>
          </div>
       </div>
    </div>
 </article>
-
-

@@ -1,3 +1,17 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.preview > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+}
+.preview > ul > li {
+  display: table-cell;
+  padding: 0.2em;
+  border: 1px solid #ccc;
+}
