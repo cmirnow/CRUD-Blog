@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-  permit_params :title, :text, :tag_list, :published_at, images: []
+  permit_params :title, :text, :tag_list, :published_at, :category_id, images: []
   remove_filter :comments, :images_attachments, :images_blobs, :taggings, :tag_taggings, :base_tags, :slug
 
   scope :all
@@ -32,13 +32,13 @@ ActiveAdmin.register Post do
 
   member_action :delete_images, method: :delete do
     post = Post.friendly.find(params[:id])
-    # asset = ActiveStorage::Attachment.find_by(params[:attachment_id])
     post.images.purge_later
     redirect_to admin_post_path(post)
   end
 
   form do |f|
     f.inputs 'Article' do
+      f.input :category
       f.input :tag_list, input_html: { value: f.object.tag_list.join(', ') }, label: 'Tags (separated by commas)'.html_safe
       f.input :title
       f.input :text, as: :quill_editor, input_html: { data:
@@ -78,6 +78,7 @@ ActiveAdmin.register Post do
       row :updated_at
       row :published_at
       row :slug
+      row :category_id
     end
   end
 end

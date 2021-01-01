@@ -1,0 +1,24 @@
+<!-- Main Content -->
+<div class="container">
+  <div class="clearfix">
+    <%= buttons %>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% @categories.each do |c| %>
+        <div class="post-preview">
+          <%= link_to :controller => "categories", :action => "show", :id => c.friendly_id do %>
+            <h2 class="post-title">
+              <%= c.name %>
+            </h2>
+          <% end %>
+            <p class="post-meta">
+              <%= c.description %>
+            </p>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+</div>
+<hr>

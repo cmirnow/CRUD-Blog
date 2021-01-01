@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_24_011101) do
+ActiveRecord::Schema.define(version: 2021_01_01_203421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,15 @@ ActiveRecord::Schema.define(version: 2020_12_24_011101) do
     t.index ["visit_token"], name: "index_ahoy_visits_on_visit_token", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "published_at"
+    t.string "slug"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
@@ -127,6 +136,7 @@ ActiveRecord::Schema.define(version: 2020_12_24_011101) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.datetime "published_at"
+    t.integer "category_id"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
 

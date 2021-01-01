@@ -12,4 +12,5 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :contacts
+  resources :categories, only: [:index, :show]
 end

@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  belongs_to :category
   has_many :comments, dependent: :destroy
   has_many_attached :images, dependent: :purge_later
   # This validates presence of title, and makes sure that the length is not more than 140 words

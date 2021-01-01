@@ -27,9 +27,14 @@ module ApplicationHelper
     if current_page?(controller: 'posts')
       link_to 'All Articles', archive_index_path, class: btn
     elsif current_page?(archive_index_path) ||
-          current_page?(controller: 'tags', action: 'show')
+          current_page?(controller: 'tags', action: 'show', id: '1') ||
+          current_page?(controller: 'categories')
       link_to 'To the Main', root_path, class: btn, data: { turbolinks: 'false' }
     end
+  end
+
+  def categories
+    link_to 'Categories', categories_path, class: btn unless Category.published.blank?
   end
 
   def btn
@@ -42,5 +47,9 @@ module ApplicationHelper
 
   def show_slider?
     current_page?(root_path) && slider_present?
+  end
+
+  def categories?
+    current_page?(controller: 'categories', action: 'show')
   end
 end
