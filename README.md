@@ -11,6 +11,7 @@
 * Geo-Targeted Banner ADS
 * Text editor
 * Built-in visit analytics
+* Categories
 * Articles
 * Pagination of the list of articles
 * AJAX Contact Form
@@ -117,7 +118,7 @@ Now login:
 127.0.0.1:3000/admin
 ```
 
-Сreate your first articles in the Posts tab.
+Сreate your first categories and articles.
 
 Finally, create a sitemap:
 
