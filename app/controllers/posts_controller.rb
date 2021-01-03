@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.published.friendly.find(params[:id])
+    @post = post
+    @category = category
+    @updated_on = update
     articles
     banner
-    @updated_on = 'Updated on ' + @post.updated_at.to_s if @post.updated_at != @post.created_at
     metatags
-    @categories = Category.published.all
-    @category = Post.published.friendly.find(params[:id])
   end
 
   def index
@@ -15,6 +14,18 @@ class PostsController < ApplicationController
     metatags
     articles
     slider
+  end
+
+  def post
+    Post.published.friendly.find(params[:id])
+  end
+
+  def category
+    Category.published.friendly.find(@post.category_id)
+  end
+
+  def update
+    'Updated on ' + @post.updated_at.to_s if @post.updated_at != @post.created_at
   end
 
   def metatags

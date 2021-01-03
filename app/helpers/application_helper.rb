@@ -54,6 +54,9 @@ module ApplicationHelper
   end
 
   def variant(i)
-    image_tag i.images.first.variant(combine_options: { resize_to_fill: [400, 300], kuwahara: '3%' })
+    image_tag i.images.first.variant(
+      combine_options:
+      { resize_to_fill: [400, 300], kuwahara: '3%' }
+    )
   end
 end

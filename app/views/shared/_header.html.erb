@@ -22,7 +22,7 @@
 										<h3 class="subheading">Geo-Targeted Banner Ads. Live Demo</h3><span class="meta">Posted on <%= @post.created_at %><br><%= @updated_on %></span> 
 								</div>
 								<% elsif categories? %>
-								<h1>Category: <%= params[:id] %></h1>
+								<h1>Category: <%= @category.name %></h1>
 								<% else %>
 									<h1>Tag#<%= params[:id] %></h1>
 								<% end %>

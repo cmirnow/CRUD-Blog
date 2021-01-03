@@ -18,6 +18,7 @@
 * AJAX Comments
 * Notifications of new comments by email
 * Upload images to base64, to local storage, to AWS S3
+* Preview an Image. Various preview options can be passed to the Active Storage variant method.
 * Tags
 * Meta Tags
 * RSS
@@ -27,7 +28,7 @@
 * SlideShow
 * Lightbox
 
-[Demo & Description (in Russian)](https://mstp.herokuapp.com).
+[Demo](https://mstp.herokuapp.com).
 
 # Quickly start
 

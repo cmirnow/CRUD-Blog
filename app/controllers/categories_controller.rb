@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
   def show
     posts
     banner
+    @category = category
   end
 
   def index
@@ -10,6 +11,10 @@ class CategoriesController < ApplicationController
   end
 
   def posts
-    @articles = Post.published.map.select { |p| p.category_id == Category.published.friendly.find(params[:id]).id }
+    @articles = Post.published.map.select { |p| p.category_id == category.id }
+  end
+
+  def category
+    Category.published.friendly.find(params[:id])
   end
 end
