@@ -22,6 +22,7 @@ class PostsController < ApplicationController
 
   def category
     Category.published.friendly.find(@post.category_id)
+  rescue StandardError
   end
 
   def update
