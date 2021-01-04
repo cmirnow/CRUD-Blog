@@ -7,19 +7,9 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <% @articles.each do |i| %>
-            <% if i.images.attached? && !current_page?(root_path) %>
-               <div class="preview">
-                          <%= link_to i.images.first, "data-lightbox" => i.title do %>
-                            <%= variant(i) %>
-                          <% end %>
-               </div>
-            <% end %>
+      <%= preview(i) %>
         <div class="post-preview">
-          <%= link_to :controller => :posts, :action => :show, :id => i.slug do %>
-            <h2 class="post-title">
-              <%= i.title %>
-            </h2>
-          <% end %>
+          <%= post_title_link(i) %>
             <p class="post-meta">Posted on
               <%= i.created_at %>
             </p>
@@ -27,11 +17,9 @@
         <hr>
       <% end %>
           <div class="clearfix">
-            <%= paginate @articles if current_page?(:controller => :archive) %>
+            <%= pagination %>
           </div>
     </div>
   </div>
 </div>
 <hr>
-
-

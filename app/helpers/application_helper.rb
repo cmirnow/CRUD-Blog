@@ -53,10 +53,40 @@ module ApplicationHelper
     current_page?(controller: 'categories', action: 'show')
   end
 
-  def variant(i)
-    image_tag i.images.first.variant(
-      combine_options:
-      { resize_to_fill: [400, 300], kuwahara: '3%' }
-    )
+  def post_title_link(i)
+    link_to controller: :posts, action: :show, id: i.slug do
+      tag.H2 class: 'post-title' do
+        i.title
+      end
+    end
+  end
+
+  def menu(i)
+    tag.li class: 'nav-item' do
+      link_to i.title, { controller: 'posts', action: 'show', id: i.slug }, class: 'nav-link'
+    end
+  end
+
+  def contacts
+    tag.li class: 'nav-item' do
+      link_to 'Contacts', { controller: 'contacts' }, class: 'nav-link'
+    end
+  end
+
+  def preview(i)
+    if i.images.attached? && !current_page?(root_path)
+      tag.div class: 'preview' do
+        link_to i.images.first, 'data-lightbox' => 'preview' do
+          image_tag i.images.first.variant(
+            combine_options:
+            { resize_to_fill: [400, 300], kuwahara: '3%' }
+          )
+        end
+      end
+    end
+  end
+
+  def pagination
+    paginate @articles if current_page?(controller: :archive)
   end
 end

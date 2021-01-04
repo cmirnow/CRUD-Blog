@@ -7,13 +7,9 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
 						<% @articles.each do |i| %>
-							<li class="nav-item">
-							<%= link_to i.title, { :controller => "posts", :action => "show", :id => i.slug }, :class => "nav-link" %>
-							</li>
+							<%= menu(i) %>
 						<% end %>
-							<li class="nav-item">
-							<%= link_to "Contacts", { :controller => "contacts" }, :class => "nav-link" %>
-							</li>
+							<%= contacts %>
 					</ul>
 				</div>
 		</div>
