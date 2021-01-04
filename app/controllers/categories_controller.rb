@@ -11,7 +11,9 @@ class CategoriesController < ApplicationController
   end
 
   def posts
-    @articles = Post.published.map.select { |p| p.category_id == category.id }
+    @articles = Kaminari.paginate_array(
+      Post.published.map.select { |p| p.category_id == category.id }
+    ).page(params[:page])
   end
 
   def category

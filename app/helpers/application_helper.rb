@@ -87,6 +87,7 @@ module ApplicationHelper
   end
 
   def pagination
-    paginate @articles if current_page?(controller: :archive)
+    paginate @articles if current_page?(controller: :archive) ||
+                          current_page?(controller: :categories, action: 'show')
   end
 end
