@@ -30,6 +30,8 @@
 
 [Demo](https://mstp.herokuapp.com).
 
+For Beginners: How to Start. [Deploying Rails Blog on Heroku](https://masterpro.ws/deploy-blog-on-rails-to-heroku).
+
 # Quickly start
 
 The application needs postgreSQL. Make sure this (for example) works:
