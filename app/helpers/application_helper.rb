@@ -41,9 +41,7 @@ module ApplicationHelper
     'btn btn-light float-right'
   end
 
-  def show_map?
-    current_page?(controller: 'contacts') && !current_visit.latitude.nil?
-  end
+
 
   def show_slider?
     current_page?(root_path) && slider_present?
@@ -53,13 +51,7 @@ module ApplicationHelper
     current_page?(controller: 'categories', action: 'show')
   end
 
-  def post_title_link(i)
-    link_to controller: :posts, action: :show, id: i.slug do
-      tag.H2 class: 'post-title' do
-        i.title
-      end
-    end
-  end
+
 
   def menu(i)
     tag.li class: 'nav-item' do
