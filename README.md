@@ -126,5 +126,5 @@ Now login:
 Finally, create a sitemap:
 
 ```
-rake sitemap:refresh
+rails sitemap:refresh
 ```
