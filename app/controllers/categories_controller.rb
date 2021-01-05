@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
 
   def posts
     @articles = Kaminari.paginate_array(
-      Post.published.map.select { |p| p.category_id == category.id }
+      Post.published.order(created_at: :desc).map.select { |p| p.category_id == category.id }
     ).page(params[:page])
   end
 
