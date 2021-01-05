@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.published
+    @categories = Category.published.page(params[:page])
     banner
   end
 
