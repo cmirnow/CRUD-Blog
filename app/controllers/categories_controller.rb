@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.published.page(params[:page])
+    @categories = Category.published.order(created_at: :asc).page(params[:page])
     banner
   end
 
