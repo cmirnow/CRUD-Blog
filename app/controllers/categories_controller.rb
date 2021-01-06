@@ -6,12 +6,12 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.published.order(created_at: :asc).page(params[:page])
+    @object = Category.published.order(created_at: :asc).page(params[:page])
     banner
   end
 
   def posts
-    @articles = Kaminari.paginate_array(
+    @object = Kaminari.paginate_array(
       Post.published.order(created_at: :desc).map.select { |p| p.category_id == category.id }
     ).page(params[:page])
   end

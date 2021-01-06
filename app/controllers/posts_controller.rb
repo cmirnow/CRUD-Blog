@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   end
 
   def articles
-    @articles = Post.published.first(5)
+    @object = Post.published.first(5)
   end
 
   def slider

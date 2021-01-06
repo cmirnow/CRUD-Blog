@@ -5,6 +5,6 @@ class ArchiveController < ApplicationController
   end
 
   def articles
-    @articles = Post.published.order(created_at: :desc).page(params[:page])
+    @object = Post.published.order(created_at: :desc).page(params[:page])
   end
 end

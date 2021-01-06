@@ -5,7 +5,7 @@
   </div>
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <% @categories.each do |i| %>
+      <% @object.each do |i| %>
       <%= preview_c(i) %>
         <div class="post-preview">
           <%= link_to :controller => "categories", :action => "show", :id => i.friendly_id do %>

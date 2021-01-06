@@ -24,11 +24,9 @@ module ApplicationHelper
   end
 
   def buttons
-    if current_page?(controller: 'posts')
+    if current_page?(root_path)
       link_to 'All Articles', archive_index_path, class: btn
-    elsif current_page?(archive_index_path) ||
-          current_page?(controller: 'tags', action: 'show', id: '1') ||
-          current_page?(controller: 'categories')
+    else
       link_to 'To the Main', root_path, class: btn, data: { turbolinks: 'false' }
     end
   end
@@ -87,11 +85,6 @@ module ApplicationHelper
   end
 
   def pagination
-    if current_page?(controller: :archive) ||
-       current_page?(controller: :categories, action: 'show')
-      paginate @articles
-    elsif current_page?(controller: :categories)
-      paginate @categories
-    end
+      paginate @object if !current_page?(root_path)
   end
 end

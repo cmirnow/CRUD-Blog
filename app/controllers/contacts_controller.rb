@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
   def index
     @contact = Contact.new
-    @articles = Post.published.first(5)
+    @object = Post.published.first(5)
     banner
     metatags
     @coord = coord

@@ -13,5 +13,4 @@ Rails.application.routes.draw do
   end
   resources :contacts
   resources :categories, only: %i[index show]
-  get 'categories/show'
 end
