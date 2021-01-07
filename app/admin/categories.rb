@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
   permit_params :title, :description, :published_at, :slug, :image
-  remove_filter :slug
+  remove_filter :slug, :image_attachment, :image_blob
 
   scope :all
   scope :published
@@ -15,7 +15,7 @@ ActiveAdmin.register Category do
   end
 
   action_item :delete_image, only: :show do
-    link_to 'Remove Image', delete_image_admin_category_path(category), method: :delete if category.image.attached?
+    link_to 'Delete Image', delete_image_admin_category_path(category), method: :delete if category.image.attached?
   end
 
   member_action :publish, method: :put do
