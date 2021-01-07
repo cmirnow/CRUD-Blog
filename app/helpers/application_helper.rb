@@ -23,15 +23,11 @@ module ApplicationHelper
     link_to image_tag('up-arrow.png'), '#', { id: 'back-to-top', class: 'back-to-top', role: 'button' }
   end
 
-  def buttons
-    if current_page?(root_path)
-      link_to 'All Articles', archive_index_path, class: btn
-    else
-      link_to 'To the Main', root_path, class: btn, data: { turbolinks: 'false' }
-    end
+  def button_one
+    link_to 'To the Main', root_path, class: btn, data: { turbolinks: 'false' } unless current_page?(root_path)
   end
 
-  def categories
+  def button_two
     link_to 'Categories', categories_path, class: btn unless Category.published.blank?
   end
 
@@ -51,14 +47,6 @@ module ApplicationHelper
     current_page?(controller: 'categories', action: 'show')
   end
 
-  def post_title_link(i)
-    link_to controller: :posts, action: :show, id: i.slug do
-      tag.H2 class: 'post-title' do
-        i.title
-      end
-    end
-  end
-
   def menu(i)
     tag.li class: 'nav-item' do
       link_to i.title, { controller: 'posts', action: 'show', id: i.slug }, class: 'nav-link'
@@ -72,6 +60,6 @@ module ApplicationHelper
   end
 
   def pagination
-      paginate @object if !current_page?(root_path)
+    paginate @object
   end
 end

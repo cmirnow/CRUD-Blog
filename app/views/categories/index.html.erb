@@ -1,18 +1,14 @@
 <!-- Main Content -->
 <div class="container">
   <div class="clearfix">
-    <%= buttons %>
+    <%= button_one %>
   </div>
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <% @object.each do |i| %>
-      <%= preview_c(i) %>
+      <%= preview_category(i) %>
         <div class="post-preview">
-          <%= link_to :controller => "categories", :action => "show", :id => i.friendly_id do %>
-            <h2 class="post-title">
-              <%= i.name %>
-            </h2>
-          <% end %>
+          <%= category_title_link(i) %>
             <p class="post-meta">
               <%= i.description %>
             </p>

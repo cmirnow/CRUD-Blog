@@ -3,7 +3,7 @@
    <div class="container">
       <div class="row">
          <div class="col-lg-8 col-md-10 mx-auto">
-            <%= link_to @category.name, { controller: "categories", action: "show", id: @category.friendly_id}, class: "post-category" if @category.present? %>
+            <%= link_to @category.title, { controller: "categories", action: "show", id: @category.friendly_id}, class: "post-category" if @category.present? %>
             <h1 class="articles"><%= title @post.title %></h1>
             <% if @post.images.attached? %>
                <div class="preview">

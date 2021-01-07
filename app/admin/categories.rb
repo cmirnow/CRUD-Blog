@@ -1,5 +1,5 @@
 ActiveAdmin.register Category do
-  permit_params :name, :description, :published_at, :slug, :image
+  permit_params :title, :description, :published_at, :slug, :image
   remove_filter :slug
 
   scope :all
@@ -38,7 +38,7 @@ ActiveAdmin.register Category do
 
   form do |f|
     f.inputs 'Category' do
-      f.input :name
+      f.input :title
       f.input :description
       f.input :image, as: :file
     end
@@ -51,7 +51,7 @@ ActiveAdmin.register Category do
           image_tag t.image.variant(resize_to_limit: [300, 400])
         end
       end
-      row :name
+      row :title
       row :description
       row :created_at
       row :updated_at
