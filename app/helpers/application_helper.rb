@@ -28,7 +28,10 @@ module ApplicationHelper
   end
 
   def button_two
-    link_to 'Categories', categories_path, class: btn unless Category.published.blank?
+    link_to 'Categories', categories_path, class: btn if !Category.published.blank? &&
+                                                         !(controller.controller_name == 'categories' &&
+                                                           controller.action_name == 'index'
+                                                          )
   end
 
   def btn

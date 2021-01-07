@@ -23,4 +23,12 @@ module PostsHelper
       end
     end
   end
+
+  def posts_list(i)
+    concat preview_post(i)
+    tag.div class: 'post-preview' do
+      concat post_title_link(i)
+      concat content_tag(:p, 'Posted on ' + i.created_at.to_s, class: 'post-meta')
+    end
+  end
 end

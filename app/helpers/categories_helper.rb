@@ -19,4 +19,12 @@ module CategoriesHelper
       end
     end
   end
+
+  def categories_list(i)
+    concat preview_category(i)
+    tag.div class: 'post-preview' do
+      concat category_title_link(i)
+      concat content_tag(:p, i.description, class: 'post-meta')
+    end
+  end
 end

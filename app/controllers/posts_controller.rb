@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   end
 
   def articles
-    @object = Post.published.order(created_at: :desc).page(params[:page])
+    @object = Post.published.order(created_at: :asc).page(params[:page])
   end
 
   def slider

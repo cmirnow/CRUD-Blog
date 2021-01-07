@@ -7,13 +7,11 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <% @object.each do |i| %>
-      <%= preview_post(i) %>
-        <div class="post-preview">
-          <%= post_title_link(i) %>
-            <p class="post-meta">Posted on
-              <%= i.created_at %>
-            </p>
-        </div>
+      <% if controller.controller_name == 'categories' && controller.action_name == 'index' %>
+      <%= categories_list(i) %>
+      <% else %>
+      <%= posts_list(i) %>
+      <% end %>
         <hr>
       <% end %>
           <div class="clearfix">
