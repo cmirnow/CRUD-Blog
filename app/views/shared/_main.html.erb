@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <% @object.each do |i| %>
-      <% if controller.controller_name == 'categories' && controller.action_name == 'index' %>
+      <% if current_page?(controller: 'categories') %>
       <%= categories_list(i) %>
       <% else %>
       <%= posts_list(i) %>

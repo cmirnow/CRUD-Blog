@@ -16,7 +16,7 @@ module ApplicationHelper
 
   def show_navigation?
     (controller.controller_name == 'posts' && controller.action_name == 'show') ||
-      controller_name == 'contacts'
+      current_page?(controller: 'contacts')
   end
 
   def scroll_up
@@ -28,10 +28,8 @@ module ApplicationHelper
   end
 
   def button_two
-    link_to 'Categories', categories_path, class: btn if !Category.published.blank? &&
-                                                         !(controller.controller_name == 'categories' &&
-                                                           controller.action_name == 'index'
-                                                          )
+    link_to 'Categories', categories_path, class: btn if Category.published.present? &&
+                                                         !current_page?(controller: 'categories')
   end
 
   def btn
