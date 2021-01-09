@@ -64,3 +64,7 @@
 .pagination span.page.current {
 background-image: linear-gradient(180deg, #38678b, #669999);
 }
+
+.badge a, .badge a:link {
+    color: white !important;
+    }

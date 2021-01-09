@@ -19,12 +19,12 @@
                </div>
             <% end %>
             <%= @post.text.html_safe %>
-            <small>
             <% @post.tag_list.each do |tag| %>
+            <span class="badge badge-pill badge-secondary">
             <%= link_to tag, tag_url(tag) %>
             (<%= Post.tagged_with(tag).count %>)
+            </span>
             <% end %>
-            </small>
                      <hr>
                      <h4>Comments</h4>
                      <%= render @post.comments %>
