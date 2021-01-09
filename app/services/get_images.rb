@@ -5,10 +5,15 @@ class GetImages
   end
 
   def self.get_country(country)
-    if %w[GB US RU NL].include? country
+    if dir_names.include? country
       country
     else
       'other'
     end
+  end
+
+  def self.dir_names
+    target_folder_path = File.join(Rails.root, 'public', 'images')
+    Dir.children(target_folder_path)
   end
 end
