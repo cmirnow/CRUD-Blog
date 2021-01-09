@@ -31,4 +31,13 @@ module PostsHelper
       concat content_tag(:p, 'Posted on ' + i.created_at.to_s, class: 'post-meta')
     end
   end
+
+  def tags(tag)
+    link_to (tag.to_s +
+      ' (' +
+      Post.tagged_with(tag).count.to_s +
+      ')'),
+            tag_url(tag),
+            class: 'badge badge-secondary'
+  end
 end
