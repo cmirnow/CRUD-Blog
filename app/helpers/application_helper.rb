@@ -16,7 +16,8 @@ module ApplicationHelper
 
   def show_navigation?
     (controller.controller_name == 'posts' && controller.action_name == 'show') ||
-      current_page?(controller: 'contacts')
+      current_page?(controller: 'contacts') ||
+      current_page?(controller: 'analytics')
   end
 
   def scroll_up
@@ -57,6 +58,12 @@ module ApplicationHelper
   def contacts
     tag.li class: 'nav-item' do
       link_to 'Contacts', { controller: 'contacts' }, class: 'nav-link'
+    end
+  end
+
+  def analytics
+    tag.li class: 'nav-item' do
+      link_to 'Analytics', { controller: 'analytics' }, class: 'nav-link', data: { turbolinks: false }
     end
   end
 

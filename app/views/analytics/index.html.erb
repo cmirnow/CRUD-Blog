@@ -1,42 +1,238 @@
-<% @visits.each do |visit| %>
-  Visit Number: <%= visit.id %><br>
-  Visit Token: <%= visit.visit_token %><br>
-  Visitor Token: <%= visit.visitor_token %><br>
-  IP: <%= visit.ip %><br>
-  User Agent: <%= visit.user_agent %><br>
-  Referrer: <%= visit.referrer %><br>
-  Referring domain: <%= visit.referring_domain %><br>
-  Device Type: <%= visit.device_type %><br>
-  Country: <%= visit.country %><br>
-  Region: <%= visit.region %><br>
-  City: <%= visit.city %><br>
-  Latitude: <%= visit.latitude %><br>
-  Longitude: <%= visit.longitude %><br>
-  User ID: <%= visit.user_id %><br>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<link rel="stylesheet" href="https://github.com/downloads/lafeber/world-flags-sprite/flags16.css" />
+
+<!-- Main Content -->
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+
+<h2>Ahoy. All-Round Web Analytics for Rails</h2>
+<p>Ряд примеров, иллюстрирующих возможности встроенной веб-аналитики Ahoy: отображена актуальная статистика посещений этого блога за месяц. Для построения диаграмм использован Highcharts.</p>
+
+<div class="card">
+<div class="card-body">
+<div id="container3" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div id="container1" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+</div>
+</div>
+
+
+<script>
+Highcharts.chart('container3', {
+  colors: ['#6699FF'],
+  chart: {
+    type: 'column',
+    inverted: true,
+    polar: true
+  },
+  title: {
+    text: 'TOP Visitors by Country'
+  },
+  subtitle: {
+        text: 'Last month usage'
+  },
+  tooltip: {
+    outside: true
+  },
+  pane: {
+    size: '85%',
+    endAngle: 270
+  },
+  xAxis: {
+    tickInterval: 1,
+    labels: {
+      align: 'right',
+      useHTML: true,
+      allowOverlap: true,
+      step: 1,
+      y: 4,
+      style: {
+        fontSize: '12px'
+      }
+    },
+    lineWidth: 0,
+    categories: [
+<% @locations.sort_by {|_key, value| value}.reverse_each do |key, value| %> 
+'<%= raw key + ' <span class="f16"><span id="flag" class="flag ' + key.downcase + '">\'' + ' + ' + '\'</span></span>' %>',
 <% end %>
-<hr>
+    ]
+  },
+  yAxis: {
+    lineWidth: 0,
+    tickInterval: 25,
+    reversedStacks: false,
+    endOnTick: true,
+    showLastLabel: true
+  },
+  plotOptions: {
+    column: {
+      stacking: 'normal',
+      borderWidth: 0,
+      pointPadding: 0,
+      groupPadding: 0.15
+    }
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    showInLegend: false,
+    name: 'Number of visits',
+    data: [
+    <% (@locations.sort_by {|_key, value| value}).reverse_each do |key, value| %>
+    <%= value %>,
+    <% end %>
+    ]
+  }]
+  
+});
+</script>
 
-<%= @browsers %>
+<script>
+Highcharts.chart('container1', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'TOP Visitors by City'
+  },
+  subtitle: {
+        text: 'Last month usage'
+    },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        style: {
+          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+        }
+      }
+    }
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    name: 'Visitors',
+    colorByPoint: true,
+   data: [
+<% @cities.sort_by {|_key, value| value}.reverse_each do |key, value| %>
+{name:'<%= key %>',
+y:<%= value %>},
+<% end %>
+] 
+  }]
+});
+</script>
 
-<%# @events.each do |i| %>
-  Time: <%#= i.time %> <br>
-  Properties: <%#= i.properties %> <br>
-  ID: <%#= i.id %> <br>
-  Name: <%#= i.name %> <br>
-  <%# end %> 
+<script>
+Highcharts.chart('container2', {
+    chart: {
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45
+        }
+    },
+    title: {
+        text: 'Devices'
+    },
+    subtitle: {
+        text: 'Last month usage'
+    },
+    plotOptions: {
+        pie: {
+            innerSize: 100,
+            depth: 45
+        }
+    },
+    credits: {
+    enabled: false
+    },
+    series: [{
+        name: 'Visits',
+   data: [
+<% @devices.sort_by {|_key, value| value}.reverse_each do |key, value| %>
+['<%= key %>',
+<%= value %>],
+<% end %>
+] 
+  }]
+});
+</script>
 
+<script>
+Highcharts.chart('container', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'External referers'
+  },
+  subtitle: {
+        text: 'Last month usage'
+    },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        style: {
+          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+        }
+      }
+    }
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    name: 'External transitions',
+    colorByPoint: true,
+   data: [
+<% @browsers.sort_by {|_key, value| value}.reverse_each do |key, value| %>
+{name:'<%= key %>',
+y:<%= value %>},
+<% end %>
+] 
+  }]
+});
+</script>
 
-
-<p><strong>Last 10 events:</strong></p>
-<ul>
-  <%# Ahoy::Event.last(10).each do |e| %>
-    <li><%#= "Event #{e.id} for user: #{e.user_id}" %></li>
-  <%# end %>
-</ul>
-
-<p><strong>Last visits:</strong></p>
-<ul>
-  <%# Ahoy::Visit.all.each do |v| %>
-    <li><%#= "Visit #{v.id} for user: #{v.user_id}" %></li>
-  <%# end %>
-</ul>
+</div>
+</div>
+</div>
