@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'archive/index'
   get 'contacts/index'
   post 'contacts/index'
-  get 'analytics/index'
   get 'feed.rss', controller: 'feeds', action: 'rss', format: 'rss'
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -13,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :contacts
   resources :categories, only: %i[index show]
+  resources :analytics, only: [:index]
 end

@@ -1,0 +1,199 @@
+<script>
+Highcharts.chart('container3', {
+  colors: ['#6699FF'],
+  chart: {
+    type: 'column',
+    inverted: true,
+    polar: true
+  },
+  title: {
+    text: 'TOP Visitors by Country'
+  },
+  subtitle: {
+        text: 'Mstp.herokuapp.com'
+  },
+  tooltip: {
+    outside: true
+  },
+  pane: {
+    size: '85%',
+    endAngle: 270
+  },
+  xAxis: {
+    tickInterval: 1,
+    labels: {
+      align: 'right',
+      useHTML: true,
+      allowOverlap: true,
+      step: 1,
+      y: 4,
+      style: {
+        fontSize: '12px'
+      }
+    },
+    lineWidth: 0,
+    categories: [
+<% @locations.sort_by {|_key, value| value}.reverse_each do |key, value| %> 
+'<%= raw key + ' <span class="f16"><span id="flag" class="flag ' + key.downcase + '">\'' + ' + ' + '\'</span></span>' %>',
+<% end %>
+    ]
+  },
+  yAxis: {
+    lineWidth: 0,
+    tickInterval: 25,
+    reversedStacks: false,
+    endOnTick: true,
+    showLastLabel: true
+  },
+  plotOptions: {
+    column: {
+      stacking: 'normal',
+      borderWidth: 0,
+      pointPadding: 0,
+      groupPadding: 0.15
+    }
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    showInLegend: false,
+    name: 'Number of visits',
+    data: [
+    <% (@locations.sort_by {|_key, value| value}).reverse_each do |key, value| %>
+    <%= value %>,
+    <% end %>
+    ]
+  }]
+  
+});
+</script>
+
+<script>
+Highcharts.chart('container1', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'TOP Visitors by City'
+  },
+  subtitle: {
+        text: 'Mstp.herokuapp.com'
+    },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        style: {
+          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+        }
+      }
+    }
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    name: 'Visitors',
+    colorByPoint: true,
+   data: [
+<% @cities.sort_by {|_key, value| value}.reverse_each do |key, value| %>
+{name:'<%= key %>',
+y:<%= value %>},
+<% end %>
+] 
+  }]
+});
+</script>
+
+<script>
+Highcharts.chart('container2', {
+    chart: {
+        type: 'pie',
+        options3d: {
+            enabled: true,
+            alpha: 45
+        }
+    },
+    title: {
+        text: 'Devices'
+    },
+    subtitle: {
+        text: 'Mstp.herokuapp.com'
+    },
+    plotOptions: {
+        pie: {
+            innerSize: 100,
+            depth: 45
+        }
+    },
+    credits: {
+    enabled: false
+    },
+    series: [{
+        name: 'Visits',
+   data: [
+<% @devices.sort_by {|_key, value| value}.reverse_each do |key, value| %>
+['<%= key %>',
+<%= value %>],
+<% end %>
+] 
+  }]
+});
+</script>
+
+<script>
+Highcharts.chart('container', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: 'Browsers'
+  },
+  subtitle: {
+        text: 'Mstp.herokuapp.com'
+    },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        style: {
+          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+        }
+      }
+    }
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    name: 'External transitions',
+    colorByPoint: true,
+   data: [
+<% @browsers.sort_by {|_key, value| value}.reverse_each do |key, value| %>
+{name:'<%= key %>',
+y:<%= value %>},
+<% end %>
+] 
+  }]
+});
+</script>
+
