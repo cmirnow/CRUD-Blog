@@ -8,12 +8,14 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <h2>Ahoy. All-Round Web Analytics for Rails</h2>
-      <p>Ряд примеров, иллюстрирующих возможности встроенной веб-аналитики Ahoy: отображена актуальная статистика посещений этого блога за месяц. Для построения диаграмм использован Highcharts.</p>
+      <%= render 'current_visit' %> 
+      <p>Ряд примеров, иллюстрирующих возможности встроенной веб-аналитики Ahoy: отображена актуальная статистика посещений этого блога за месяц.</p>
       <span class="badge badge-warning">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
   <path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
 </svg>
-Monthly statistics</span>
+Monthly statistics
+</span>
       <div class="card">
         <div class="card-body">
           <div id="container3" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
@@ -44,3 +46,4 @@ Code examples</a>
     </div>
   </div>
 </div>
+<script src="/js/analytics-popover.js"></script>

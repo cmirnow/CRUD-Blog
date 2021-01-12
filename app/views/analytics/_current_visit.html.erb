@@ -1,0 +1,19 @@
+  <button type="button" class="btn btn-light" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="
+  <% @current_visit.each do |visit| %>
+  <b>Visit Number:</b> <%= visit&.id %><br>
+  <b>Visit Token:</b> <%= visit&.visit_token %><br>
+  <b>Visitor Token:</b> <%= visit&.visitor_token %><br>
+  <b>IP:</b> <%= visit&.ip %><br>
+  <b>User Agent:</b> <%= visit&.user_agent %><br>
+  <b>Referrer:</b> <%= visit&.referrer %><br>
+  <b>Referring domain:</b> <%= visit&.referring_domain %><br>
+  <b>Device Type:</b> <%= visit&.device_type %><br>
+  <b>Country:</b> <%= visit&.country %><br>
+  <b>Region:</b> <%= visit&.region %><br>
+  <b>City:</b> <%= visit&.city %><br>
+  <b>Latitude:</b> <%= visit&.latitude %><br>
+  <b>Longitude:</b> <%= visit&.longitude %><br>
+  <b>User ID:</b> <%= visit&.user_id %>
+<% end %>">
+  Current Visit
+</button> 
