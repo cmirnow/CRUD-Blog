@@ -28,7 +28,9 @@
 * SlideShow
 * Lightbox
 
-[Demo](https://mstp.herokuapp.com).
+[Live Demo](https://mstp.herokuapp.com)
+
+[Analytics Charts](https://mstp.herokuapp.com/analytics)
 
 For Beginners: How to Start. [Deploying Rails Blog on Heroku](https://masterpro.ws/deploy-blog-on-rails-to-heroku).
 
