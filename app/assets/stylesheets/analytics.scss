@@ -6,11 +6,11 @@
     color: black !important;
 }
 
-a.button, a.button:link, a.button:visited, input[type="submit"], input[type="button"], button {
+button {
     background-image:none !important;
     color: #999 !important;
 }
-a.button:not(.disabled):hover, a.button:link:not(.disabled):hover, a.button:visited:not(.disabled):hover, button:not(.disabled):hover {
+button:not(.disabled):hover {
     background-color: #999;
     color: white !important;
 }
