@@ -5,7 +5,7 @@ class AnalyticsController < ApplicationController
     @cities = Ahoy::Visit.all.group(:city).count.map { |k, v| [k ||= 'undefined', v] }
     @devices = Ahoy::Visit.all.group(:device_type).count.map { |k, v| [k ||= 'undefined', v] }
     @object = Post.published.first(5)
-    @current_visit = [current_visit]
+    @current_visit = current_visit
     banner
   end
 end

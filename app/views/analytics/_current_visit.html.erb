@@ -1,19 +1,16 @@
   <button type="button" class="btn btn-light" data-container="body" data-toggle="popover" data-placement="right" data-html="true" data-content="
-  <% @current_visit.each do |visit| %>
-  <b>Visit Number:</b> <%= visit&.id %><br>
-  <b>Visit Token:</b> <%= visit&.visit_token %><br>
-  <b>Visitor Token:</b> <%= visit&.visitor_token %><br>
-  <b>IP:</b> <%= visit&.ip %><br>
-  <b>User Agent:</b> <%= visit&.user_agent %><br>
-  <b>Referrer:</b> <%= visit&.referrer %><br>
-  <b>Referring domain:</b> <%= visit&.referring_domain %><br>
-  <b>Device Type:</b> <%= visit&.device_type %><br>
-  <b>Country:</b> <%= visit&.country %><br>
-  <b>Region:</b> <%= visit&.region %><br>
-  <b>City:</b> <%= visit&.city %><br>
-  <b>Latitude:</b> <%= visit&.latitude %><br>
-  <b>Longitude:</b> <%= visit&.longitude %><br>
-  <b>User ID:</b> <%= visit&.user_id %>
-<% end %>">
+  <b>Visit Token:</b> <%= @current_visit&.visit_token %><br>
+  <b>Visitor Token:</b> <%= @current_visit&.visitor_token %><br>
+  <b>IP:</b> <%= @current_visit&.ip %><br>
+  <b>User Agent:</b> <%= @current_visit&.user_agent %><br>
+  <b>Referrer:</b> <%= @current_visit&.referrer %><br>
+  <b>Referring domain:</b> <%= @current_visit&.referring_domain %><br>
+  <b>Device Type:</b> <%= @current_visit&.device_type %><br>
+  <b>Country:</b> <%= @current_visit&.country %><br>
+  <b>Region:</b> <%= @current_visit&.region %><br>
+  <b>City:</b> <%= @current_visit&.city %><br>
+  <b>Latitude:</b> <%= @current_visit&.latitude %><br>
+  <b>Longitude:</b> <%= @current_visit&.longitude %><br>
+  <b>User ID:</b> <%= @current_visit&.user_id %>">
   Current Visit
 </button> 
