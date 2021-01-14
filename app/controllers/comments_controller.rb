@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
       respond_to do |format|
         if @comment.save
           CommentMailer.with(comment: @comment).new_comment_email.deliver_later
-          format.js   { flash.now[:success] = 'You have added a comment!' }
+          format.js   { flash.now[:warning] = 'Your comment will be published after moderation.' }
         else
           format.js { flash.now[:error] = see_errors(@comment) }
         end
