@@ -16,6 +16,7 @@
 * Pagination of the list of articles
 * AJAX Contact Form
 * AJAX Comments
+* Comments Pre-Moderation by default
 * Notifications of new comments by email
 * Upload images to base64, to local storage, to AWS S3
 * Preview an Image. Various preview options can be passed to the Active Storage variant method.

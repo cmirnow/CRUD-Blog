@@ -24,7 +24,7 @@
             <% end %>
                      <hr>
                      <h4>Comments</h4>
-                     <%= render @post.comments %>
+                     <%= render @post.comments.published %>
                      <h5>Add a comment:</h5>
                      <%= render 'comments/form' %>
          </div>
