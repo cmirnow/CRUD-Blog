@@ -10,6 +10,7 @@
     --------------------------
     </p>
     <p>NickName: <%= @comment.commenter %></p>
+    <p>Post: <%= link_to @post.title, { controller: "posts", action: "show", id: @post.slug } %>
     <p>
     Message:<br>
     ----------
