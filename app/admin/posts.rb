@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-  permit_params :title, :text, :tag_list, :published_at, :category_id, images: []
+  permit_params :title, :text, :tag_list, :published_at, :category_id, :description, :keywords, images: []
   remove_filter :comments, :images_attachments, :images_blobs, :taggings, :tag_taggings, :base_tags, :slug
 
   scope :all
@@ -41,6 +41,8 @@ ActiveAdmin.register Post do
       f.input :category
       f.input :tag_list, input_html: { value: f.object.tag_list.join(', ') }, label: 'Tags (separated by commas)'.html_safe
       f.input :title
+      f.input :description
+      f.input :keywords
       f.input :text, as: :quill_editor, input_html: { data:
         { options:
           { modules:
@@ -67,11 +69,11 @@ ActiveAdmin.register Post do
   show do |t|
     attributes_table do
       if t.images.attached?
-          t.images.each do |img|
-            span do
-              image_tag img.variant(resize_to_limit: [100, 100])
-            end
+        t.images.each do |img|
+          span do
+            image_tag img.variant(resize_to_limit: [100, 100])
           end
+        end
       end
       row :title
       row :created_at

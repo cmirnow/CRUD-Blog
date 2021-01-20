@@ -3,9 +3,10 @@ class PostsController < ApplicationController
     @post = post
     @category = category
     @updated_on = update
+    @page_description = @post.description
+    @page_keywords = @post.keywords
     articles
     banner
-    metatags
   end
 
   def index

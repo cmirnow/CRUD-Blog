@@ -3,7 +3,8 @@ class CategoriesController < ApplicationController
     posts
     banner
     @category = category
-    metatags
+    @page_title = @category.title
+    @page_description = @category.description
   end
 
   def index

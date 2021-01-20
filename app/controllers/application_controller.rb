@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
 
   def metatags
     set_meta_tags title: 'Building a Blog with Ruby on Rails',
-                  keywords: 'blog, ruby on rails, web analytics, geo-targeted banner ads',
                   description: 'Your Guide To Content Management System For Ruby on Rails'
   end
 end
