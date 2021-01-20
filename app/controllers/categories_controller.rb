@@ -3,11 +3,13 @@ class CategoriesController < ApplicationController
     posts
     banner
     @category = category
+    metatags
   end
 
   def index
     @object = Category.published.order(created_at: :asc).page(params[:page])
     banner
+    metatags
   end
 
   def posts

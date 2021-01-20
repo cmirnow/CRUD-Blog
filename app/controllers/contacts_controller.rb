@@ -38,12 +38,6 @@ class ContactsController < ApplicationController
     end
   end
 
-  def metatags
-    set_meta_tags title: 'Contacts',
-                  keywords: 'blog, ruby on rails, web analytics, geo-targeted banner ads',
-                  description: 'Your Guide To Content Management System For Ruby on Rails'
-  end
-
   private
 
   def contact_params

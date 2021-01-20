@@ -6,6 +6,7 @@ class AnalyticsController < ApplicationController
     @devices = Ahoy::Visit.all.group(:device_type).count.map { |k, v| [k ||= 'undefined', v] }
     @object = Post.published.first(5)
     @current_visit = current_visit
+    metatags
     banner
   end
 end

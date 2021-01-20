@@ -2,6 +2,7 @@ class TagsController < ApplicationController
   def show
     banner
     articles
+    metatags
   end
 
   def articles
