@@ -1,4 +1,12 @@
 ActiveAdmin.register Post do
+  attributes_to_display = Post.new.attributes.keys - ['text']
+  index do
+    attributes_to_display.each do |attribute|
+      column attribute.to_sym
+    end
+    actions
+  end
+
   permit_params :title, :text, :tag_list, :published_at, :category_id, :description, :keywords, images: []
   remove_filter :comments, :images_attachments, :images_blobs, :taggings, :tag_taggings, :base_tags, :slug
 
