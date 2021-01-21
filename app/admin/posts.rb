@@ -80,7 +80,7 @@ ActiveAdmin.register Post do
       row :updated_at
       row :published_at
       row :slug
-      row :category_id
+      row :category
     end
   end
 end
