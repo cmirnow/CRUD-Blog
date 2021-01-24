@@ -63,18 +63,6 @@ $ git clone https://github.com/cmirnow/CRUD-Blog.git
 $ cd CRUD-Blog
 ```
 
-Remove or comment out these lines. You can return them back after 'rake db:migrate':
-
-config/initializers/ahoy.rb
-```
-# Deleting old entries
-Ahoy::Visit.where("started_at < ?", 1.week.ago).find_in_batches do |visits|
-  visit_ids = visits.map(&:id)
-  Ahoy::Event.where(visit_id: visit_ids).delete_all
-  Ahoy::Visit.where(id: visit_ids).delete_all
-end
-```
-
 Set your login and password to db/seeds.rb
 
 Ready to get started?

@@ -1,9 +1,15 @@
 ActiveAdmin.register Post do
-  attributes_to_display = Post.new.attributes.keys - ['text']
   index do
-    attributes_to_display.each do |attribute|
-      column attribute.to_sym
-    end
+    column :id
+    column :title
+    column :keywords
+    column :description
+    column :category
+    column :slug
+    column :tag_list
+    column :created_at
+    column :updated_at
+    column :published_at
     actions
   end
 
@@ -47,10 +53,10 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs 'Article' do
       f.input :category
-      f.input :tag_list, input_html: { value: f.object.tag_list.join(', ') }, label: 'Tags (separated by commas)'.html_safe
-      f.input :title
-      f.input :description
-      f.input :keywords
+      f.input :tag_list, input_html: { value: f.object.tag_list.join(', ') }, label: 'Tags (separated by commas)'
+      f.input :title, label: 'Title (70 characters maximum)'
+      f.input :description, label: 'Description (160 characters maximum)'
+      f.input :keywords, label: 'Keywords (5 - 10 words)'
       f.input :text, as: :quill_editor, input_html: { data:
         { options:
           { modules:
@@ -69,8 +75,8 @@ ActiveAdmin.register Post do
                ['clean'],
                ['image'],
                ['video']] },
-            theme: 'snow' } } }
-      f.input :images, as: :file, input_html: { multiple: true }
+            theme: 'snow' } } }, label: 'The content of the article'
+      f.input :images, as: :file, input_html: { multiple: true }, label: 'Add illustrations to the article'
     end
     f.actions
   end
