@@ -13,7 +13,7 @@ Ahoy.server_side_visits = :when_needed
 
 # Deleting old entries
 if ActiveRecord::Base.connection.table_exists? 'ahoy_visits'
-  Ahoy::Visit.where('started_at < ?', 1.month.ago).find_in_batches do |visits|
+  Ahoy::Visit.where('started_at < ?', 7.days.ago).find_in_batches do |visits|
     visit_ids = visits.map(&:id)
     Ahoy::Event.where(visit_id: visit_ids).delete_all
     Ahoy::Visit.where(id: visit_ids).delete_all
