@@ -4,8 +4,7 @@ module CategoriesHelper
       tag.div class: 'preview' do
         link_to i.image, 'data-lightbox' => 'preview' do
           image_tag i.image.variant(
-            combine_options:
-            { resize_to_fill: [400, 300], monochrome: true }
+            resize_to_fill: [400, 300], monochrome: true
           )
         end
       end

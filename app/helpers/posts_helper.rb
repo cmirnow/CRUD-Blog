@@ -8,8 +8,7 @@ module PostsHelper
       tag.div class: 'preview' do
         link_to i.images.first, 'data-lightbox' => 'preview' do
           image_tag i.images.first.variant(
-            combine_options:
-            { resize_to_fill: [400, 300], kuwahara: '3%' }
+            resize_to_fill: [400, 300], kuwahara: '3%'
           )
         end
       end
