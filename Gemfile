@@ -34,7 +34,7 @@ gem 'font_awesome5_rails'
 gem 'simple_form'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'figaro'
-gem 'acts-as-taggable-on', '~> 6.0'
+gem 'acts-as-taggable-on', '~> 7.0'
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'friendly_id', '~> 5.4.0'
