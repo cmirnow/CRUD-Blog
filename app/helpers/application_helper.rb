@@ -70,4 +70,8 @@ module ApplicationHelper
   def pagination
     paginate @object
   end
+
+  def greeting
+    Date.today.strftime('%d of %B %Y, %A')
+  end
 end
