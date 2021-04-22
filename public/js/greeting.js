@@ -3,7 +3,7 @@ var themessage;
 var morning = ('Good morning.');
 var afternoon = ('Good afternoon.');
 var evening = ('Good evening.');
-var night = ('Good night.');
+var night = ('Goodnight.');
 
 if (thehours >= 3 && thehours < 11) {
     themessage = morning;
