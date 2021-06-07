@@ -28,6 +28,7 @@
 * Current Weather by IP on Google Map
 * SlideShow
 * Lightbox
+* JavaScript Time Greeting
 
 [Live Demo](https://mstp.herokuapp.com)
 
