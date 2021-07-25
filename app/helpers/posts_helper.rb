@@ -6,8 +6,8 @@ module PostsHelper
   def preview_post(i)
     if i.images.attached? && !current_page?(root_path)
       tag.div class: 'preview' do
-        link_to i.images.first, 'data-lightbox' => 'preview' do
-          image_tag i.images.first.variant(
+        link_to i.images.take, 'data-lightbox' => 'preview' do
+          image_tag i.images.take.variant(
             resize_to_fill: [400, 300], kuwahara: '3%'
           )
         end

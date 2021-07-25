@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 
   def slider
     # @slider = Slider.published.find_by_name('slider_one')
-    @slider = Slider.published.first
+    @slider = Slider.published.take
   end
 
   private
