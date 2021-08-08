@@ -30,6 +30,8 @@
 * Lightbox
 * JavaScript Time Greeting
 
+[![CRUD Blog on Rails. Geo-Targeted Banner Ads](https://github.com/cmirnow/CRUD-Blog/blob/master/public/edit_post.jpg)](https://masterpro.ws/deploy-blog-on-rails-to-heroku)
+
 [Live Demo](https://mstp.herokuapp.com)
 
 [Analytics Charts](https://mstp.herokuapp.com/analytics)
@@ -37,7 +39,7 @@
 For Beginners: How to Start. [Deploying Rails Blog on Heroku](https://masterpro.ws/deploy-blog-on-rails-to-heroku).
 
 
-[![CRUD Blog on Rails. Geo-Targeted Banner Ads](https://github.com/cmirnow/CRUD-Blog/blob/master/public/edit_post.jpg)](https://masterpro.ws/deploy-blog-on-rails-to-heroku)
+[![CRUD Blog on Rails. Geo-Targeted Banner Ads](https://github.com/cmirnow/CRUD-Blog/blob/master/public/ahoy_visits.jpg)](https://masterpro.ws/create-blog-on-rails)
 
 
 # Quickly start
