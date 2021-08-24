@@ -10,13 +10,13 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
+gem 'sass-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -29,6 +29,7 @@ gem 'activeadmin'
 gem 'devise'
 gem 'activeadmin_quill_editor'
 gem 'ahoy_matey'
+gem 'geocoder'
 gem 'font_awesome5_rails'
 gem 'simple_form'
 gem "recaptcha", require: "recaptcha/rails"

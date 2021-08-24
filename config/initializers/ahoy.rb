@@ -3,6 +3,8 @@ end
 
 # set to true for JavaScript tracking
 Ahoy.api = false
+# set to true for Ahoy 4.0
+Ahoy.geocode = true
 
 # better user agent parsing
 Ahoy.user_agent_parser = :device_detector
