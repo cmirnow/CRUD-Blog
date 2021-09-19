@@ -94,6 +94,8 @@ KEY_OPENWEATHERMAP: '*******************************'
 GOOGLE_MAP_KEY: '*************************************'
 AWS_ACCESS_KEY_ID: '********************'
 AWS_SECRET_ACCESS_KEY: '*********************************'
+REGION: "*********"
+BUCKET: "*********"
 ```
 
 ```
@@ -102,8 +104,8 @@ amazon:
 service: S3
 access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
 secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-region: region_aws #for example: us-east-2
-bucket: your_bucket_name
+region: <%= ENV['REGION'] %>
+bucket: <%= ENV['BUCKET'] %>
 ```
 
 OK, let's go:
