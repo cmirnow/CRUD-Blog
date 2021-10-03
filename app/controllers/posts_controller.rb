@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   def show
-    @post = post
     @presenter = PostPresenter.new(post)
     @page_description = @presenter.description
     @page_keywords = @presenter.keywords

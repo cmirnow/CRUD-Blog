@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.friendly.find(params[:post_id])
     if verify_recaptcha
+      @presenter = PostPresenter.new(@post)
       @comment = @post.comments.create(comment_params)
       respond_to do |format|
         if @comment.save

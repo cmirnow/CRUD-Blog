@@ -1,7 +1,7 @@
 <div id="flash-message">
    <%= render 'shared/flash' %>
 </div>
-<%= simple_form_for([@post, @post.comments.build], remote: true) do |f| %>
+<%= simple_form_for([@presenter.post, @presenter.post.comments.build], remote: true) do |f| %>
 <%= f.error_notification %>
 <%= f.input :commenter, :label => "Nickname", placeholder: 'Enter your nickname' %>
 <%= f.input :body, :label => "Your comment", placeholder: 'Enter your comment' %>
