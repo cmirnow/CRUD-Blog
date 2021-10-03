@@ -1,16 +1,14 @@
 class PostsController < ApplicationController
   def show
     @post = post
-    @category = category
-    @updated_on = update
-    @page_description = @post.description
-    @page_keywords = @post.keywords
+    @presenter = PostPresenter.new(post)
+    @page_description = @presenter.description
+    @page_keywords = @presenter.keywords
     articles
     banner
   end
 
   def index
-    # @all_ids = Post.ids
     banner
     metatags
     articles
@@ -19,15 +17,6 @@ class PostsController < ApplicationController
 
   def post
     Post.published.friendly.find(params[:id])
-  end
-
-  def category
-    Category.published.friendly.find(@post.category_id)
-  rescue StandardError
-  end
-
-  def update
-    'Updated on ' + @post.updated_at.to_s if @post.updated_at != @post.created_at
   end
 
   def articles

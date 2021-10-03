@@ -3,14 +3,14 @@
    <div class="container">
       <div class="row">
          <div class="col-lg-8 col-md-10 mx-auto">
-            <%= link_to @category.title, { controller: "categories", action: "show", id: @category.friendly_id}, class: "post-category" if @category.present? %>
-            <h1 class="articles"><%= title @post.title %></h1>
-            <% if @post.images.attached? %>
+            <%= link_to @presenter.category.title, { controller: "categories", action: "show", id: @presenter.category.friendly_id}, class: "post-category" if @presenter.category.present? %>
+            <h1 class="articles"><%= title @presenter.post_title %></h1>
+            <% if @presenter.post.images.attached? %>
                <div class="preview">
                   <ul>
-                     <% @post.images.each do |img| %>
+                     <% @presenter.post.images.each do |img| %>
                         <li>
-                           <%= link_to img, "data-lightbox" => @post.title do %>
+                           <%= link_to img, "data-lightbox" => @presenter.post_title do %>
                               <%= image_tag(img) %>
                            <% end %>
                         </li>
@@ -18,13 +18,13 @@
                   </ul>
                </div>
             <% end %>
-            <%= @post.text.html_safe %>
-            <% @post.tag_list.each do |tag| %>
+            <%= @presenter.post.text.html_safe %>
+            <% @presenter.post.tag_list.each do |tag| %>
             <%= tags(tag) %>
             <% end %>
                      <hr>
                      <h4>Comments</h4>
-                     <%= render @post.comments.published.order(created_at: :desc) %>
+                     <%= render @presenter.post.comments.published.order(created_at: :desc) %>
                      <h5>Add a comment:</h5>
                      <%= render 'comments/form' %>
          </div>

@@ -19,10 +19,10 @@
 								<div class="post-heading">
 									<div class="greet"><%= greeting %></div>
 									<% if show_navigation? %>
-										<h1><%= @post.title.html_safe %></h1>
+										<h1><%= @presenter.post.title.html_safe %></h1>
 										<h3 class="subheading">Geo-Targeted Banner Ads. Live Demo</h3>
-										<span class="meta">Posted on <%= @post.created_at %><br>
-										<%= @updated_on %>
+										<span class="meta">Posted on <%= @presenter.created_at %><br>
+										<%= @presenter.updated_on %>
 										</span>
 									<% elsif categories? %>
 										<h1>Category: <%= @category.title %></h1>
