@@ -21,7 +21,8 @@
 									<% if show_navigation? %>
 										<h1><%= @presenter.post.title.html_safe %></h1>
 										<h3 class="subheading">Geo-Targeted Banner Ads. Live Demo</h3>
-										<span class="meta">Posted on <%= @presenter.created_at %><br>
+										<span class="meta">
+										<%= @presenter.created_at %><br>
 										<%= @presenter.updated_on %>
 										</span>
 									<% elsif categories? %>
@@ -36,5 +37,5 @@
 			</div>
 		</header>
 <% else %>
-			<%= render 'shared/map' %>
+	<%= render 'shared/map' %>
 <% end %>

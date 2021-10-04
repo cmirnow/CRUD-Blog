@@ -6,11 +6,11 @@ class PostPresenter
   attr_reader :post
 
   def updated_on
-    'Updated on ' + post.updated_at.to_s if post.updated_at != post.created_at
+    'Updated on ' + post.updated_at.to_s
   end
 
   def created_at
-    post.created_at
+    'Posted on ' + post.created_at.to_s
   end
 
   def description
