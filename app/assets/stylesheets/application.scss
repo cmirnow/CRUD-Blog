@@ -16,23 +16,33 @@
 @import "bootstrap/scss/bootstrap";
 @import 'font_awesome5_webfont';
 @import 'lightbox';
+@font-face { 
+   font-family: 'Caveat';
+   src: font-url('Caveat-VariableFont_wght.ttf');
+}
 
 h1 {
 	color: yellow;
 }
 
 h1.articles {
+font-family: 'Caveat', cursive !important;
 color: #669999;
-font-size: xx-large;
+font-size: xxx-large;
 padding-bottom: 1em;
 }
 
-h2 {
-	color: #669999;
+h2,h3 {
+font-family: 'Caveat', cursive !important;
+color: #669999;
 }
 
 h3 {
 	color: #b3ff00;
+}
+
+label {
+    font-size: small;
 }
 
 a, a:link, a:visited {

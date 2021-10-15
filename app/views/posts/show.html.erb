@@ -23,9 +23,8 @@
             <%= tags(tag) %>
             <% end %>
                      <hr>
-                     <h4>Comments</h4>
+                     <h2>Add a comment:</h2>
                      <%= render @presenter.post.comments.published.order(created_at: :desc) %>
-                     <h5>Add a comment:</h5>
                      <%= render 'comments/form' %>
          </div>
       </div>
