@@ -26,7 +26,7 @@
 										<%= @presenter.updated_on %>
 										</span>
 									<% elsif categories? %>
-										<h1>Category: <%= @category.title %></h1>
+										<h1>Category: <%= @presenter.title %></h1>
 									<% else %>
 										<h1>Tag#<%= params[:id] %></h1>
 									<% end %>

@@ -2,9 +2,9 @@ class CategoriesController < ApplicationController
   def show
     posts
     banner
-    @category = category
-    @page_title = @category.title
-    @page_description = @category.description
+    @presenter = CategoryPresenter.new(category)
+    @page_title = @presenter.title
+    @page_description = @presenter.description
   end
 
   def index
