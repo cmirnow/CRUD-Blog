@@ -17,6 +17,7 @@ module ApplicationHelper
   def show_navigation?
     (controller.controller_name == 'posts' && controller.action_name == 'show') ||
       current_page?(controller: 'contacts') ||
+      current_page?(controller: 'slideshows') ||
       current_page?(controller: 'analytics')
   end
 
@@ -64,6 +65,12 @@ module ApplicationHelper
   def analytics
     tag.li class: 'nav-item' do
       link_to 'Analytics', { controller: 'analytics' }, class: 'nav-link', data: { turbolinks: false }
+    end
+  end
+
+  def slideshow
+    tag.li class: 'nav-item' do
+      link_to 'Slideshow', { controller: 'slideshows' }, class: 'nav-link'
     end
   end
 

@@ -26,6 +26,7 @@
 * User-Friendly URLs
 * Sitemap
 * Current Weather by IP on Google Map
+* PhotoGallery
 * SlideShow
 * Lightbox
 * JavaScript Time Greeting

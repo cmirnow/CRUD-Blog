@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :contacts
   resources :categories, only: %i[index show]
   resources :analytics, only: [:index]
+  resources :slideshows, only: [:index], path: :slideshow
 end
