@@ -3,7 +3,7 @@
 		<div class="row">
 			<% if slideshow_present? %>
 			<% @slideshow.images.each do |x| %>
-				<a href="<%= path_to_file(x) %>" data-toggle="lightbox" data-gallery="photogallery" class="col-sm-4">
+				<a href="<%= path_to_file(x) %>" data-lightbox="photo" class="col-sm-4">
 					<%= image_tag x.variant(
 						resize_to_limit: [300, 222],
 						kuwahara: '3%'
@@ -15,7 +15,3 @@
 		</div>
 	</div>
 </div>
-
-<link rel="stylesheet" href="/js/ecco/ekko-lightbox.css">
-<script src="/js/ecco/ekko-lightbox.js"></script>
-<script src="/js/ecco/ekkolightbox.js"></script>
