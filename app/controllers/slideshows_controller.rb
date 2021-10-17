@@ -3,5 +3,6 @@ class SlideshowsController < ApplicationController
     @slideshow = Slideshow.published.find_by(id: 1)
     @object = Post.published.first(4)
     banner
+    metatags
   end
 end
