@@ -1,6 +1,6 @@
 ActiveAdmin.register Slider do
-  permit_params :published_at, :name, images: []
-  remove_filter :images_attachments, :images_blobs
+  permit_params :published_at, :name, :interval, :dark, :fade, images: []
+  remove_filter :images_attachments, :images_blobs, :interval, :dark
 
   scope :all
   scope :published
@@ -45,7 +45,10 @@ ActiveAdmin.register Slider do
 
   form do |f|
     f.inputs 'Slider' do
+      f.input :fade, as: :boolean, label: 'carousel-fade'
       f.input :name
+      f.input :interval, input_html: { value: f.object.interval || 5000 }
+      f.input :dark, input_html: { value: f.object.dark || 0.2 }
       f.input :images, as: :file, input_html: { multiple: true }
     end
     f.actions
@@ -65,6 +68,7 @@ ActiveAdmin.register Slider do
       row :created_at
       row :updated_at
       row :published_at
+      row :fade
     end
     para 'Click the preview to delete the image.'
   end

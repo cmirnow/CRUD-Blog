@@ -1,4 +1,18 @@
-<div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
+<style>
+/* Bootstrap 4 carousel dark overlay */
+.carousel-item:after {
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(0,0,0,<%= slider_dark %>);
+}
+</style>
+
+<div id="carouselFade" class="carousel slide <%= carousel_fade? %>" data-ride="carousel" data-interval="<%= slider_interval %>">
 	<div class="carousel-inner">
 			<% @slider.images.each_with_index do |img, index| %>
 				<div class="carousel-item<%= ' active' if index == 0 %>">

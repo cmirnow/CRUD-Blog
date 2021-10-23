@@ -42,10 +42,6 @@ module ApplicationHelper
     current_page?(controller: 'contacts') && !current_visit.latitude.nil?
   end
 
-  def show_slider?
-    current_page?(root_path) && slider_present?
-  end
-
   def categories?
     current_page?(controller: 'categories', action: 'show')
   end
