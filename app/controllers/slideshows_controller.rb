@@ -1,6 +1,6 @@
 class SlideshowsController < ApplicationController
   def index
-    @slideshow = Slideshow.published.find_by(id: 1)
+    @slideshow = Slideshow.published.take
     @object = Post.published.first(4)
     banner
     metatags
