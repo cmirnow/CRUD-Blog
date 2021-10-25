@@ -9,10 +9,7 @@
 					<% if slideshow_present? %>
 						<% @slideshow.images.each do |x| %>
 							<a href="<%= path_to_file(x) %>" data-lightbox="photo" class="col-sm-4">
-								<%= image_tag x.variant(
-						resize_to_limit: [300, 222],
-						kuwahara: '3%'
-						),
+								<%= image_tag x.variant(@options),
 					:class => "img-fluid" %>
 							</a>
 						<% end %>

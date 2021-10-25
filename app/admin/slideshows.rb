@@ -1,7 +1,6 @@
 ActiveAdmin.register Slideshow do
-
-  permit_params :published_at, :name, images: []
-  remove_filter :images_attachments, :images_blobs
+  permit_params :published_at, :name, :options, images: []
+  remove_filter :images_attachments, :images_blobs, :options
 
   scope :all
   scope :published
@@ -16,7 +15,9 @@ ActiveAdmin.register Slideshow do
   end
 
   action_item :delete_images, only: :show do
-    link_to 'Delete Images', delete_images_admin_slideshow_path(slideshow), method: :delete if slideshow.images.attached?
+    if slideshow.images.attached?
+      link_to 'Delete Images', delete_images_admin_slideshow_path(slideshow), method: :delete
+    end
   end
 
   member_action :publish, method: :put do
@@ -47,6 +48,9 @@ ActiveAdmin.register Slideshow do
   form do |f|
     f.inputs 'Slideshow' do
       f.input :name
+      f.input :options,
+              input_html: { value: f.object.options || "{ resize_to_limit: [300, 222], kuwahara: '3%' }" },
+              label: 'Options. For example: { resize_to_limit: [300, 222], monochrome: true }'
       f.input :images, as: :file, input_html: { multiple: true }
     end
     f.actions
@@ -69,5 +73,4 @@ ActiveAdmin.register Slideshow do
     end
     para 'Click the preview to delete the image.'
   end
-  
 end
