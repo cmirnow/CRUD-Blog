@@ -1,6 +1,6 @@
 ActiveAdmin.register Slider do
   permit_params :published_at, :name, :interval, :dark, :fade, images: []
-  remove_filter :images_attachments, :images_blobs, :interval, :dark
+  remove_filter :images_attachments, :images_blobs, :interval, :dark, :fade
 
   scope :all
   scope :published
