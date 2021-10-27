@@ -20,6 +20,6 @@ module SlideshowsHelper
   end
 
   def carousel_fade?
-    'carousel-fade' if Slider.published.take.fade
+    'carousel-fade' if Slider.published.take.fade == true
   end
 end
