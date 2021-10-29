@@ -1,10 +1,11 @@
 class SlideshowsController < ApplicationController
   def index
     @slideshow = slideshow
-    @options = options
+    # @options = options
     @object = object
     banner
     metatags
+    options
   end
 
   def slideshow
@@ -12,7 +13,10 @@ class SlideshowsController < ApplicationController
   end
 
   def options
-    eval(Slideshow.take.options) if slideshow
+    @options = proc {
+      $SAFE = 1
+      eval(Slideshow.take.options) if slideshow
+    }.call
   end
 
   def object
