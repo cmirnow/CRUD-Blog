@@ -1,6 +1,7 @@
 <!-- Post Content -->
 <article>
    <div class="container">
+      <%= render 'shared/social_networks_share_buttons' %>
       <div class="row">
          <div class="col-lg-8 col-md-10 mx-auto">
             <%= link_to @presenter.category.title, { controller: "categories", action: "show", id: @presenter.category.friendly_id}, class: "post-category" if @presenter.category.present? %>
