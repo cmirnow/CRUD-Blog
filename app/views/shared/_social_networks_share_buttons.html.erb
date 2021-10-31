@@ -1,9 +1,11 @@
-<%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{@presenter.post_title}", target: "_blank", class: "share-buttons" do %>
-  <i class="fab fa-twitter-square fa-1x twitter"></i>
+<div class="well">
+  <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{@presenter&.post_title || title}", target: "_blank", class: "share-buttons" do %>
+  <i class="fab fa-twitter-square fa-2x twitter"></i>
 <% end %>
 <%= link_to "https://www.facebook.com/share.php?u=#{request.original_url}", target: "_blank", class: "share-buttons" do %>
-　　<i class="fab fa-facebook-square fa-1x facebook"></i>
+　　<i class="fab fa-facebook-square fa-2x facebook"></i>
 <% end %>
 <%= link_to "https://www.linkedin.com/sharing/share-offsite/?url=#{request.original_url}", target: "_blank", class: "share-buttons" do %>
-　　<i class="fab fa-linkedin fa-1x linkedin"></i>
+　　<i class="fab fa-linkedin fa-2x linkedin"></i>
 <% end %> 
+</div>

@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @page_keywords = @presenter.keywords
     articles
     banner
+    metatags_og
   end
 
   def index

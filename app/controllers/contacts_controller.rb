@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
     @object = Post.published.first(4)
     banner
     metatags
+    metatags_og
     @coord = coord
     weather(coord[0], coord[1])
   end

@@ -7,6 +7,7 @@ class AnalyticsController < ApplicationController
     @object = Post.published.first(4)
     @current_visit = current_visit
     metatags
+    metatags_og
     banner
   end
 end

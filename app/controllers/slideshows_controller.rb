@@ -1,10 +1,10 @@
 class SlideshowsController < ApplicationController
   def index
     @slideshow = slideshow
-    # @options = options
     @object = object
     banner
     metatags
+    metatags_og
     options
   end
 

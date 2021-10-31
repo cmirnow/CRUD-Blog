@@ -25,4 +25,10 @@ class ApplicationController < ActionController::Base
     set_meta_tags title: 'Building a Blog with Ruby on Rails',
                   description: 'Your Guide To Content Management System For Ruby on Rails'
   end
+
+  def metatags_og
+    set_meta_tags og: {
+      title: @presenter&.post_title || 'Building a Blog with Ruby on Rails'
+    }
+  end
 end
