@@ -1,5 +1,4 @@
-<div class="well">
-  <%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{@presenter&.post_title || title}", target: "_blank", class: "share-buttons" do %>
+<%= link_to "https://twitter.com/intent/tweet?url=#{request.original_url}&text=#{@presenter&.post_title || title}", target: "_blank", class: "share-buttons" do %>
   <i class="fab fa-twitter-square fa-2x twitter"></i>
 <% end %>
 <%= link_to "https://www.facebook.com/share.php?u=#{request.original_url}", target: "_blank", class: "share-buttons" do %>
@@ -7,5 +6,10 @@
 <% end %>
 <%= link_to "https://www.linkedin.com/sharing/share-offsite/?url=#{request.original_url}", target: "_blank", class: "share-buttons" do %>
 　　<i class="fab fa-linkedin fa-2x linkedin"></i>
-<% end %> 
-</div>
+<% end %>
+<%= mail_to "me@domain.com", body: request.original_url, cc: "ccaddress@domain.com", subject: @presenter&.post_title || title, class: "share-buttons" do %>
+　　<i class="fas fa-envelope-square fa-2x mailto"></i>
+<% end %>
+<%= link_to "https://telegram.me/share/url?url=#{request.original_url}&text=#{@presenter&.post_title || title}", target: "_blank", class: "share-buttons" do %>
+　　<i class="fab fa-telegram fa-2x telegram"></i>
+<% end %>
