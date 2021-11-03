@@ -20,14 +20,23 @@
 				</div>
 			</div>
 		</div>
-		<h1 class="section-heading h1 pt-4 articles">Slideshow</h1>
-		
-		<%= image_tag("management_images_active_storage.jpg", alt: "Build a Photo Blog with Ruby on Rails") %>
-		<!--Section description-->
-		<p class="section-description">Панель администрирования блога позволяет удобное управление изображениями фотогалереи, сохраненными в облако Амазона (на выбор Amazon S3, Google Cloud Storage или Microsoft Azure Storage) средствами Active Storage. Выбор фотографий на вашем ПК, загрузка на Amazon S3 - нажатием всего пары кнопок.
-			<br>Возможна публикация / снятие с публикации галереи изображений, удаление как всех фотографий галереи разом, так и выборочно.
-			<br>Дополнительно реализованы трансформация превью изображений посредством фильтра monochrome и ресайз:
-			<br>
-			<br>Image blobs can have variants that are the result of a set of transformations applied to the original. These variants are used to create thumbnails, fixed-size avatars, or any other derivative image from the original. Variants rely on ImageProcessing gem for the actual transformations of the file, so you must add gem "image_processing" to your Gemfile if you wish to use variants. By default, images will be processed with ImageMagick using the MiniMagick gem, but you can also switch to the libvips processor operated by the ruby-vips gem.</p>
+
+<div class="card border-secondary mb-3">
+	<div class="card-header">Slideshow Information</div>
+	<div class="card-body text-secondary">
+		<h5 class="card-title"><%= 'Title: ' + @slideshow.name %></h5>
+		<p class="card-text">
+			<%= 'Created: ' + @slideshow.created_at.strftime("%d of %B %Y, %A") %>
+		</p>
+	</div>
+</div>
+<h1 class="section-heading h1 pt-4 articles">Slideshow</h1>
+<%= image_tag("management_images_active_storage.jpg", alt: "Build a Photo Blog with Ruby on Rails") %>
+	<!--Section description-->
+	<p class="section-description">Панель администрирования блога позволяет удобное управление изображениями фотогалереи, сохраненными в облако Амазона (на выбор Amazon S3, Google Cloud Storage или Microsoft Azure Storage) средствами Active Storage. Выбор фотографий на вашем ПК, загрузка на Amazon S3 - нажатием всего пары кнопок.
+		<br>Возможна публикация / снятие с публикации галереи изображений, удаление как всех фотографий галереи разом, так и выборочно.
+		<br>Дополнительно реализованы трансформация превью изображений посредством фильтра monochrome и ресайз:
+		<br>
+		<br>Image blobs can have variants that are the result of a set of transformations applied to the original. These variants are used to create thumbnails, fixed-size avatars, or any other derivative image from the original. Variants rely on ImageProcessing gem for the actual transformations of the file, so you must add gem "image_processing" to your Gemfile if you wish to use variants. By default, images will be processed with ImageMagick using the MiniMagick gem, but you can also switch to the libvips processor operated by the ruby-vips gem.</p>
 	</section>
 </div>

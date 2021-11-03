@@ -10,7 +10,7 @@ class PostPresenter
   end
 
   def created_at
-    'Posted on ' + post.created_at.to_s
+    'Posted on ' + post.created_at.strftime("%d of %B %Y")
   end
 
   def description
