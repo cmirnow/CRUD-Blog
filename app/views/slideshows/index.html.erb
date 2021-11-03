@@ -9,10 +9,12 @@
 				<div class="row">
 					<% if slideshow_present? %>
 						<% @slideshow.images.each do |x| %>
-							<a href="<%= path_to_file(x) %>" data-lightbox="photo" class="col-sm-4">
-								<%= image_tag x.variant(@options),
-					:class => "img-fluid" %>
-							</a>
+							<%= link_to(
+								path_to_file(x), html_options = {
+								"data-lightbox" => "photo", "class" => "col-sm-4"
+							}) do %>
+								<%= image_tag x.variant(@options), "class" => "img-fluid" %>
+							<% end %>
 						<% end %>
 					<% end %>
 				</div>
