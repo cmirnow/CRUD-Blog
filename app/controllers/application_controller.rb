@@ -28,7 +28,10 @@ class ApplicationController < ActionController::Base
 
   def metatags_og
     set_meta_tags og: {
-      title: @presenter&.post_title || 'Building a Blog with Ruby on Rails'
+      title: @presenter&.post_title || 'Building a Blog with Ruby on Rails',
+      type: 'article',
+      url: request.original_url,
+      description: @presenter&.description || 'Your Guide To Content Management System For Ruby on Rails'
     }
   end
 end

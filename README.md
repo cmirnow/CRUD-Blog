@@ -22,6 +22,7 @@
 * Preview an Image. Various preview options can be passed to the Active Storage variant method.
 * Tags
 * Meta Tags
+* Open Graph Protocol Meta Tags
 * RSS
 * User-Friendly URLs
 * Sitemap
