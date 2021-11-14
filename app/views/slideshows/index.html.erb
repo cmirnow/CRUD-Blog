@@ -21,6 +21,7 @@
 			</div>
 		</div>
 
+<% if slideshow_present? %>
 <div class="card border-secondary mb-3">
 	<div class="card-header">Slideshow Information</div>
 	<div class="card-body text-secondary">
@@ -30,6 +31,7 @@
 		</p>
 	</div>
 </div>
+<% end %>
 
 <h1 class="section-heading h1 pt-4 articles">Slideshow</h1>
 <%= image_tag("management_images_active_storage.jpg", alt: "Build a Photo Blog with Ruby on Rails") %>
