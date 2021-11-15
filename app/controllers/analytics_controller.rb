@@ -8,6 +8,7 @@ class AnalyticsController < ApplicationController
     @current_visit = current_visit
     metatags
     metatags_og
+    metatags_twitter
     banner
   end
 end

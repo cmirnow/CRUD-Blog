@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     articles
     banner
     metatags_og
+    metatags_twitter
   end
 
   def index

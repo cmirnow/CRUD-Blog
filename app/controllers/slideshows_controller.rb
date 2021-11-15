@@ -5,6 +5,7 @@ class SlideshowsController < ApplicationController
     banner
     metatags
     metatags_og
+    metatags_twitter
     options
   end
 

@@ -31,7 +31,24 @@ class ApplicationController < ActionController::Base
       title: @presenter&.post_title || 'Building a Blog with Ruby on Rails',
       type: 'article',
       url: request.original_url,
-      description: @presenter&.description || 'Your Guide To Content Management System For Ruby on Rails'
+      description: @presenter&.description || 'Your Guide To Content Management System For Ruby on Rails',
+      image: image
     }
+  end
+
+  def metatags_twitter
+    set_meta_tags twitter: {
+      card: 'summary',
+      site: '@mastercot'
+    }
+  end
+
+  def image
+    request.base_url +
+      if @presenter&.post&.images&.attached?
+        Rails.application.routes.url_helpers.rails_blob_path(@presenter.post.images.take, only_path: true)
+      else
+        ActionController::Base.helpers.image_url('blog_onrails.jpg')
+      end
   end
 end
