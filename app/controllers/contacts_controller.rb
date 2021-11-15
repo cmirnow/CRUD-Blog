@@ -5,6 +5,7 @@ class ContactsController < ApplicationController
     banner
     metatags
     metatags_og
+    metatags_twitter
     @coord = coord
     weather(coord[0], coord[1])
   end
