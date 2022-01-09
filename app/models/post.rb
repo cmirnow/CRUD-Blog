@@ -3,8 +3,9 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many_attached :images, dependent: :purge_later
 
-  validates :title, presence: true, uniqueness: true, length: { maximum: 70 }
-  validates :description, length: { maximum: 160 }
+  validates :category, presence: true
+  validates :title, presence: true, uniqueness: true, length: { minimum: 3, maximum: 70 }
+  validates :description, length: { minimum: 4, maximum: 160 }, allow_blank: true
 
   acts_as_taggable_on :tag
   extend FriendlyId

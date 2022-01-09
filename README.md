@@ -130,3 +130,9 @@ Finally, create a sitemap:
 ```
 rails sitemap:refresh
 ```
+
+## Running specs
+
+```
+$ bundle exec rspec
+```

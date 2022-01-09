@@ -2,7 +2,7 @@ class Category < ApplicationRecord
   has_many :posts
   has_one_attached :image, dependent: :purge_later
 
-  validates :title, presence: true, uniqueness: true, length: { maximum: 70 }
+  validates :title, presence: true, uniqueness: true, length: { minimum: 2, maximum: 70 }
 
   extend FriendlyId
   friendly_id :title, use: :slugged
