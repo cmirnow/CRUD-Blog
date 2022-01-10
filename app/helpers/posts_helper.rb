@@ -27,7 +27,7 @@ module PostsHelper
     concat preview_post(i)
     tag.div class: 'post-preview' do
       concat post_title_link(i)
-      concat content_tag(:p, 'Posted on ' + i.created_at.strftime("%d of %B %Y, %A"), class: 'post-meta')
+      concat content_tag(:p, 'Posted on ' + i.created_at.strftime("%d of %B %Y, %A"), class: 'post-meta-date')
       concat content_tag(:p, i.description, class: 'post-meta')
     end
   end
