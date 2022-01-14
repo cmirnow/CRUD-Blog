@@ -39,7 +39,7 @@ module ApplicationHelper
   end
 
   def show_map?
-    current_page?(controller: 'contacts') && !current_visit.latitude.nil?
+    current_page?(controller: 'contacts')
   end
 
   def categories?

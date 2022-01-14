@@ -11,7 +11,11 @@ class ContactsController < ApplicationController
   end
 
   def coord
-    [current_visit.latitude, current_visit.longitude]
+    if Rails.env.production?
+      [current_visit.latitude, current_visit.longitude]
+    else
+      ['48.864716', '2.349014'] # Paris, my love :)
+    end
   end
 
   def weather(*args)
