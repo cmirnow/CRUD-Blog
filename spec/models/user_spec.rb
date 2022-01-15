@@ -9,4 +9,7 @@ RSpec.describe User, type: :model do
     )
     expect(user.valid_password?('password')).to be_truthy
   end
+
+  it { should have_many(:visits).class_name('Ahoy::Visit') }
+  it { should have_many(:events).class_name('Ahoy::Event') }
 end
