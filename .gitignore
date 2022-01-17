@@ -43,3 +43,6 @@ yarn-debug.log*
 /vendor/bundle
 # Ignore application configuration
 /config/application.yml
+
+# Ignore coverage
+/coverage

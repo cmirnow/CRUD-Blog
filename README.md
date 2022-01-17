@@ -136,3 +136,9 @@ rails sitemap:refresh
 ```
 $ bundle exec rspec
 ```
+or
+
+```
+$ bundle exec rspec -fd
+
+```
