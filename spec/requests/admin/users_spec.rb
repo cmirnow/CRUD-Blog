@@ -8,12 +8,12 @@ RSpec.describe 'Admin::Users', type: :request do
     sign_in user
   end
 
-  #   describe 'edit' do
-  #     it 'renders user form' do
-  #       get "/admin/admins/#{user.id}/edit"
-  #       expect(assigns(:user)).to eq user
-  #     end
-  #   end
+  describe 'edit' do
+    it 'renders user form' do
+      get "/admin/admins/#{user.id}/edit"
+      expect(assigns(:admin)).to eq user
+    end
+  end
 
   describe 'update' do
     it 'updates user' do
