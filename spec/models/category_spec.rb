@@ -8,6 +8,6 @@ RSpec.describe Category, type: :model do
   end
 
   it { is_expected.to validate_length_of(:title).is_at_least(2).is_at_most(70) }
-  it { should validate_uniqueness_of(:title) }
+  it { is_expected.to validate_uniqueness_of(:title) }
   it { is_expected.to have_one_attached(:image) }
 end

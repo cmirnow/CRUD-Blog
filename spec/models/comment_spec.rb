@@ -14,4 +14,5 @@ RSpec.describe Comment do
 
   it { is_expected.to validate_length_of(:body).is_at_least(3).is_at_most(999) }
   it { is_expected.to validate_length_of(:commenter).is_at_least(3).is_at_most(15) }
+  it { is_expected.to belong_to(:post) }
 end
