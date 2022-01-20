@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
     if verify_recaptcha
       respond_to do |format|
         if @contact.save
-          FormMailer.with(form: @contact).new_form_email.deliver_later
+          FormMailer.new_form_email(@contact).deliver_later
           format.js   { flash.now[:success] = 'Thank you for your message.' }
         else
           format.js { flash.now[:error] = see_errors(@contact) }
