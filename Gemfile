@@ -43,9 +43,6 @@ gem 'kaminari'
 gem 'aws-sdk-s3'
 gem 'lightbox2-rails'
 
-# https://github.com/podigee/device_detector/issues/89
-gem 'device_detector', '1.0.5'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
