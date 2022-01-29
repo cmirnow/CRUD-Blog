@@ -21,10 +21,12 @@ module ApplicationHelper
       current_page?(controller: 'analytics')
   end
 
-  #   def scroll_up
-  #     link_to image_tag('up-arrow.png'), '#', { id: 'back-to-top', class: 'back-to-top', role: 'button' }
-  #   end
-  
+  def scroll_up
+    link_to '#', id: 'back-to-top', class: 'btn btn-light back-to-top' do
+      content_tag(:i, '', class: 'far fa-caret-square-up fa-3x')
+    end
+  end
+
   def button_one
     link_to 'To the Main', root_path, class: btn, data: { turbolinks: 'false' } unless current_page?(root_path)
   end
