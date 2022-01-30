@@ -22,8 +22,10 @@ module ApplicationHelper
   end
 
   def scroll_up
-    link_to '#', id: 'back-to-top', class: 'btn btn-light back-to-top' do
-      content_tag(:i, '', class: 'far fa-caret-square-up fa-3x')
+    unless show_map?
+      link_to '#', id: 'back-to-top', class: 'btn btn-light float-right back-to-top' do
+        content_tag(:i, '', class: 'far fa-caret-square-up fa-3x')
+      end
     end
   end
 
