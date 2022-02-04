@@ -6,6 +6,8 @@ class TagsController < ApplicationController
   end
 
   def articles
-    @object = Kaminari.paginate_array(Post.published.tagged_with(params[:id])).page(params[:page])
+    @object = Kaminari.paginate_array(
+      Post.published.order(created_at: :desc).tagged_with(params[:id])
+    ).page(params[:page])
   end
 end
