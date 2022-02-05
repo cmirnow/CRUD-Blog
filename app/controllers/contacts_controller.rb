@@ -20,6 +20,8 @@ class ContactsController < ApplicationController
 
   def weather(*args)
     @obj = Openweathermap.current_weather_data(*args)
+  rescue StandardError => e
+    flash.now[:warning] = "Rescued: #{e.inspect}"
   end
 
   def create

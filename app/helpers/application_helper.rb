@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def scroll_up
-    unless show_map?
+    unless current_page?(controller: 'contacts')
       link_to '#', id: 'back-to-top', class: 'btn btn-light float-right back-to-top' do
         content_tag(:i, '', class: 'far fa-caret-square-up fa-3x')
       end
@@ -43,7 +43,7 @@ module ApplicationHelper
   end
 
   def show_map?
-    current_page?(controller: 'contacts')
+    current_page?(controller: 'contacts') if @obj
   end
 
   def categories?
