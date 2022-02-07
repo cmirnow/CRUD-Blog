@@ -38,8 +38,18 @@
 	<!--Section description-->
 	<p class="section-description">Панель администрирования блога позволяет удобное управление изображениями фотогалереи, сохраненными в облако Амазона (на выбор Amazon S3, Google Cloud Storage или Microsoft Azure Storage) средствами Active Storage. Выбор фотографий на вашем ПК, загрузка на Amazon S3 - нажатием всего пары кнопок.
 		<br>Возможна публикация / снятие с публикации галереи изображений, удаление как всех фотографий галереи разом, так и выборочно.
-		<br>Дополнительно реализованы трансформация превью изображений посредством фильтра sepia-tone и ресайз:
 		<br>
-		<br>Image blobs can have variants that are the result of a set of transformations applied to the original. These variants are used to create thumbnails, fixed-size avatars, or any other derivative image from the original. Variants rely on ImageProcessing gem for the actual transformations of the file, so you must add gem "image_processing" to your Gemfile if you wish to use variants. By default, images will be processed with ImageMagick using the MiniMagick gem, but you can also switch to the libvips processor operated by the ruby-vips gem.</p>
+		<br>Что же касается трансформации превью - пожалуй, это одна из самых функциональных галерей изображений: вам доступны сотни фильтров ImageMagick, которые возможно определить в формате JSON в панели управления. Например, в данном случае используются эти опции:</p>
+		
+<div class="card border-secondary mb-3">
+	<div class="card-body text-secondary">
+		<samp>
+			<%= @options %>
+		</samp>
+	</div>
+</div>
+		<blockquote class="blockquote">
+			<p class="mb-0">Image blobs can have variants that are the result of a set of transformations applied to the original. These variants are used to create thumbnails, fixed-size avatars, or any other derivative image from the original. Variants rely on ImageProcessing gem for the actual transformations of the file, so you must add gem "image_processing" to your Gemfile if you wish to use variants. By default, images will be processed with ImageMagick using the MiniMagick gem, but you can also switch to the libvips processor operated by the ruby-vips gem.</p>
+		</blockquote>
 	</section>
 </div>
