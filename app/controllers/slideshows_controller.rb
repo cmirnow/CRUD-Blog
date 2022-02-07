@@ -14,10 +14,11 @@ class SlideshowsController < ApplicationController
   end
 
   def options
-    @options = proc {
-      $SAFE = 1
-      eval(Slideshow.take.options) if slideshow
-    }.call
+    #     @options = proc {
+    #       $SAFE = 1
+    #       eval(Slideshow.take.options) if slideshow
+    #     }.call
+    @options = JSON.parse(Slideshow.take.options) if slideshow
   end
 
   def object

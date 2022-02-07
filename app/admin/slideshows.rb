@@ -50,7 +50,7 @@ ActiveAdmin.register Slideshow do
       f.input :name
       f.input :options,
               input_html: { value: f.object.options || "{ resize_to_limit: [300, 222], kuwahara: '3%' }" },
-              label: 'Options. For example: { resize_to_limit: [300, 222], monochrome: true }'
+              label: 'Options. For example: { "resize_to_limit":[300, 222], "monochrome": true, "quality": 15 }'
       f.input :images, as: :file, input_html: { multiple: true }
     end
     f.actions
