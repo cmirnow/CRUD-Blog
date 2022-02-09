@@ -18,7 +18,7 @@ class SlideshowsController < ApplicationController
     #       $SAFE = 1
     #       eval(Slideshow.take.options) if slideshow
     #     }.call
-    @options = JSON.parse(Slideshow.take.options) if slideshow
+    @options = Slideshow.take.options if slideshow
   end
 
   def object

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "resize_to_limit": { "type": "array" },
+    "monochrome": { "type": "boolean" },
+    "kuwahara": {"type": "string"},
+    "sepia-tone": {"type": "string"},
+    "quality": { "type": "integer" },
+    "polaroid": { "type": "integer" }
+  },
+  "required": ["resize_to_limit"]
+} 
