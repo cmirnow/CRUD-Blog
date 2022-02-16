@@ -11,7 +11,9 @@
 						<% @slideshow.images.each do |x| %>
 							<%= link_to(
 								path_to_file(x), html_options = {
-								"data-lightbox" => "photo", "class" => "col-sm-4"
+								"data-toggle" => "lightbox",
+								"data-gallery" => "slideshow",
+								"class" => "col-sm-4"
 							}) do %>
 								<%= image_tag x.variant(@options), "class" => "img-fluid" %>
 							<% end %>

@@ -11,7 +11,8 @@
                   <ul>
                      <% @presenter.post.images.each do |img| %>
                         <li>
-                           <%= link_to img, "data-lightbox" => @presenter.post_title do %>
+                           <%= link_to img, "data-toggle" => "lightbox",
+                           "data-gallery" => @presenter.post_title do %>
                               <%= image_tag(img) %>
                            <% end %>
                         </li>

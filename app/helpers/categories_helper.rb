@@ -2,7 +2,7 @@ module CategoriesHelper
   def preview_category(i)
     if i.image.attached?
       tag.div class: 'preview' do
-        link_to i.image, 'data-lightbox' => 'preview' do
+        link_to i.image, "data-toggle" => "lightbox", "data-gallery" => "categories" do
           image_tag i.image.variant(
             resize_to_fill: [400, 300], monochrome: true
           )

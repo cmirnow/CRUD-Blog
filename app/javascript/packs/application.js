@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("bootstrap")
+require("ekko-lightbox/dist/ekko-lightbox")
+require("./ekkolightbox")
 
 var jQuery = require("jquery");
 // import jQuery from "jquery";
