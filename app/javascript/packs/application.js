@@ -10,6 +10,8 @@ require("channels")
 require("bootstrap")
 require("ekko-lightbox/dist/ekko-lightbox")
 require("./ekkolightbox")
+require("./spinner")
+require("./clean-blog.min")
 
 var jQuery = require("jquery");
 // import jQuery from "jquery";
