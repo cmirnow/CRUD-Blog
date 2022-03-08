@@ -27,8 +27,8 @@
 * User-Friendly URLs
 * Sitemap
 * Current Weather by IP on Google Map
+* Advanced Slider
 * PhotoGallery
-* SlideShow
 * Lightbox
 * JavaScript Time Greeting
 
