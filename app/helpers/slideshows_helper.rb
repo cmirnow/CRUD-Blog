@@ -22,4 +22,12 @@ module SlideshowsHelper
   def carousel_fade?
     'carousel-fade' if Slider.published.take.fade == true
   end
+
+  def captions
+    @slider&.captions&.split("\r\n")
+  end
+
+  def caption_color
+    @slider.color
+  end
 end
