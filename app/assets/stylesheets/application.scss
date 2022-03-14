@@ -133,3 +133,8 @@ width: 45px;
     text-align: left;
     bottom: initial;
 }
+
+/* Little fix for Home Page */
+.post-preview>a>.post-title {
+    display: table-cell;
+}
