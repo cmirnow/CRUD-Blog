@@ -14,8 +14,7 @@
  *= require_self
  */
 @import "bootstrap/scss/bootstrap";
-@import 'font_awesome5_webfont';
-@import "ekko-lightbox/dist/ekko-lightbox";
+@import "glightbox/dist/css/glightbox.css";
 
 @font-face { 
    font-family: 'Caveat';
@@ -109,11 +108,6 @@ width: 45px;
 }
 /* Social network share buttons End */
 
-/* Ecco-Lightbox */
-.ekko-lightbox-nav-overlay a span {
-    color: white;
-}
-
 /* Carousel dark overlay */
 .carousel-item:after {
     content: "";
@@ -137,4 +131,9 @@ width: 45px;
 /* Little fix for Home Page */
 .post-preview>a>.post-title {
     display: table-cell;
+}
+
+/* Bootstrap 5 fix contrast ratio */
+header.masthead .post-heading, header.masthead .site-heading {
+    opacity: 0.9;
 }

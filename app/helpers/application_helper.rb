@@ -23,14 +23,14 @@ module ApplicationHelper
 
   def scroll_up
     unless current_page?(controller: 'contacts')
-      link_to '#', id: 'back-to-top', class: 'btn btn-light float-right back-to-top' do
+      link_to '#', id: 'back-to-top', class: 'btn btn-light back-to-top' do
         content_tag(:i, '', class: 'far fa-caret-square-up fa-3x')
       end
     end
   end
 
   def button_one
-    link_to 'To the Main', root_path, class: btn, data: { turbolinks: 'false' } unless current_page?(root_path)
+    link_to 'To the Main', root_path, class: btn unless current_page?(root_path)
   end
 
   def button_two
@@ -39,7 +39,7 @@ module ApplicationHelper
   end
 
   def btn
-    'btn btn-light float-right'
+    'btn btn-light float-end'
   end
 
   def show_map?
@@ -64,7 +64,7 @@ module ApplicationHelper
 
   def analytics
     tag.li class: 'nav-item' do
-      link_to 'Analytics', { controller: 'analytics' }, class: 'nav-link', data: { turbolinks: false }
+      link_to 'Analytics', { controller: 'analytics' }, class: 'nav-link'
     end
   end
 

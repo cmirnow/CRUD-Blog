@@ -3,3 +3,13 @@
 <%= javascript_include_tag "greeting" %>
 <%= javascript_include_tag "scroll_up" %>
 <%= javascript_include_tag "btn_enable" %>
+<%= javascript_include_tag "glightbox/dist/js/glightbox.min" %>
+<!-- Lightbox -->
+<script type="text/javascript">
+  const lightbox = GLightbox({
+  	touchNavigation: true,
+    loop: true,
+    openEffect: 'zoom',
+    closeEffect: 'fade',
+  });
+</script>

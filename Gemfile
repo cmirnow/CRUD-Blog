@@ -13,8 +13,6 @@ gem 'puma'
 gem 'sass-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
@@ -30,7 +28,6 @@ gem 'devise'
 gem 'activeadmin_quill_editor'
 gem 'ahoy_matey'
 gem 'geocoder'
-gem 'font_awesome5_rails'
 gem 'simple_form'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'figaro'
