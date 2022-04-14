@@ -12,14 +12,14 @@ RSpec.describe 'Contacts', type: :request do
 end
 
 RSpec.describe ContactsController, type: :controller do
-  subject { controller.weather('48.864716', '2.349014') }
+  subject { controller.weather('48.858093', '2.294694') }
 
   it 'should return these keys' do
     expect(subject).to include(
-      # 'name' => 'Paris'
+      'name' => 'Palais-Royal',
       'base' => 'stations',
       'cod' => 200,
-      'timezone' => 3600
+      'timezone' => 7200
     )
   end
   it 'includes clouds key' do
