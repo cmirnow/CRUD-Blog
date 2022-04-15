@@ -5,8 +5,6 @@
 <%= f.error_notification %>
 <%= f.input :commenter, :label => "Nickname", placeholder: 'Enter your nickname' %>
 <%= f.input :body, :label => "Your comment", placeholder: 'Enter your comment' %>
-<%= recaptcha_tags :callback => "enableBtn" %>
-<div class="center-on-small-only">
-   <%= f.submit :Send, class: 'btn', id: 'sbm', disabled: 'disabled' %>
-</div>
+<%= recaptcha_tags :callback => "enableBtn", class: "mt-3" %>
+<%= f.submit :Send, class: 'btn center-on-small-only mt-2', id: 'sbm', disabled: 'disabled' %>
 <% end %>
