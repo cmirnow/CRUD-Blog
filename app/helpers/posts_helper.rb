@@ -38,6 +38,6 @@ module PostsHelper
       Post.tagged_with(tag).count.to_s +
       ')'),
             tag_url(tag),
-            "span class" => 'badge bg-secondary text-white'
+            "class" => 'btn btn-outline-secondary rounded-pill'
   end
 end
