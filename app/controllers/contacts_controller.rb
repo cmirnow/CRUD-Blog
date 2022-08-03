@@ -11,10 +11,14 @@ class ContactsController < ApplicationController
   end
 
   def coord
-    if Rails.env.production?
-      [current_visit.latitude, current_visit.longitude]
-    else
+    coord = [
+      current_visit&.latitude,
+      current_visit&.longitude
+    ]
+    if coord.compact.empty?
       ['48.864716', '2.349014'] # Paris, my love :)
+    else
+      coord
     end
   end
 
