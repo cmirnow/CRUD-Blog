@@ -1,0 +1,7 @@
+@media only screen and (min-width: 992px) {
+#mainNav .navbar-nav>li.nav-item>a {
+    color: #000 !important;
+}
+#mainNav .navbar-nav>li.nav-item>a:focus, #mainNav .navbar-nav>li.nav-item>a:hover {
+    color: #2a2b2c !important;
+}}
