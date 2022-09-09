@@ -1,16 +1,14 @@
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
-import "channels"
+import "./channels"
+import "./add_jquery"
 import * as bootstrap from 'bootstrap'
 import "@popperjs/core"
-import "../stylesheets/application"
-import "@fortawesome/fontawesome-free/css/all"
+import "./stylesheets/application.scss"
 import "./spinner"
 import "./clean-blog.min"
+import * as lightbox from 'lightbox2'
 
-var jQuery = require("jquery");
-global.$ = global.jQuery = jQuery;
-window.$ = window.jQuery = jQuery;
 
 document.addEventListener("DOMContentLoaded", function(event) {
   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))

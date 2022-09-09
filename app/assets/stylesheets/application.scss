@@ -13,8 +13,9 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap/scss/bootstrap";
-@import "glightbox/dist/css/glightbox.css";
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import "font-awesome";
+@import '../../../node_modules/lightbox2/dist/css/lightbox.min';
 
 @font-face { 
    font-family: 'Caveat';
