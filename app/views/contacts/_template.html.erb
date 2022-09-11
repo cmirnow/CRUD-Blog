@@ -60,7 +60,7 @@
                     </form>
                     <%= recaptcha_tags :callback => "enableBtn" %>
                         <div class="center-on-small-only">
-                            <%= f.submit :Send, class: 'btn', id: 'sbm', disabled: 'disabled' %>
+                            <%= f.submit :Send, class: 'btn', id: 'sbm', data: { disable_with: "Please wait..." }, disabled: true %>
                         </div>
         <% end %>
                 </div>

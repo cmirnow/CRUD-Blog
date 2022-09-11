@@ -1,16 +1,14 @@
 class CommentsController < ApplicationController
   def create
     @post = Post.friendly.find(params[:post_id])
-    if verify_recaptcha
-      @presenter = PostPresenter.new(@post)
-      @comment = @post.comments.create(comment_params)
-      respond_to do |format|
-        if @comment.save
-          CommentMailer.with(comment: @comment, post: @post).new_comment_email.deliver_later
-          format.js   { flash.now[:warning] = 'Your comment will be published after moderation.' }
-        else
-          format.js { flash.now[:error] = see_errors(@comment) }
-        end
+    @presenter = PostPresenter.new(@post)
+    @comment = @post.comments.create(comment_params)
+    respond_to do |format|
+      if verify_recaptcha && @comment.save
+        CommentMailer.with(comment: @comment, post: @post).new_comment_email.deliver_later
+        format.js { flash.now[:warning] = 'Your comment will be published after moderation.' }
+      else
+        format.js { flash.now[:error] = see_errors(@comment) }
       end
     end
   end
@@ -20,6 +18,8 @@ class CommentsController < ApplicationController
       view_context.pluralize(x.errors.count, 'error').to_s +
         ' prohibited this call from being send: ' +
         x.errors.full_messages.map { |i| %('#{i}') }.join(',')
+    else
+      "Verify recaptcha: #{verify_recaptcha}"
     end
   end
 

@@ -30,14 +30,12 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    if verify_recaptcha
-      respond_to do |format|
-        if @contact.save
-          FormMailer.new_form_email(@contact).deliver_later
-          format.js   { flash.now[:success] = 'Thank you for your message.' }
-        else
-          format.js { flash.now[:error] = see_errors(@contact) }
-        end
+    respond_to do |format|
+      if verify_recaptcha && @contact.save
+        FormMailer.new_form_email(@contact).deliver_later
+        format.js { flash.now[:success] = 'Thank you for your message.' }
+      else
+        format.js { flash.now[:error] = see_errors(@contact) }
       end
     end
   end
@@ -47,6 +45,8 @@ class ContactsController < ApplicationController
       view_context.pluralize(x.errors.count, 'error').to_s +
         ' prohibited this call from being send: ' +
         x.errors.full_messages.map { |i| %('#{i}') }.join(',')
+    else
+      "Verify recaptcha: #{verify_recaptcha}"
     end
   end
 
