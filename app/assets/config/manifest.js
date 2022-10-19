@@ -4,4 +4,9 @@
 //= link clean-blog.min.css
 //= link mdb.css
 //= link contacts_only.css
+//= link highcharts/highcharts.js
+//= link highcharts/highcharts-more.js
+//= link highcharts/highcharts-3d.js
+//= link highcharts/modules/exporting.js
+//= link world-flags-sprite/stylesheets/flags16.css
 //= link_tree ../builds

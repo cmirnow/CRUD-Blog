@@ -13,6 +13,8 @@ module Blog
 
     # https://github.com/rails/rails/issues/35817
     config.active_storage.replace_on_assign_to_many = false
+    # https://masterpro.ws/migration-webpacker-jsbundling-rails-webpack
+    config.assets.paths << Rails.root.join('node_modules')
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

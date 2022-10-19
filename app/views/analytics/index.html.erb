@@ -1,8 +1,9 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-3d.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<link rel="stylesheet" href="https://github.com/downloads/lafeber/world-flags-sprite/flags16.css" />
+<%= stylesheet_link_tag 'world-flags-sprite/stylesheets/flags16.css' %>
+<%= javascript_include_tag 'highcharts/highcharts' %>
+<%= javascript_include_tag 'highcharts/highcharts-3d' %>
+<%= javascript_include_tag 'highcharts/highcharts-more' %>
+<%= javascript_include_tag 'highcharts/modules/exporting' %>
+
 <!-- Main Content -->
 <div class="container">
   <%= render 'shared/social_networks_share_buttons' %>
