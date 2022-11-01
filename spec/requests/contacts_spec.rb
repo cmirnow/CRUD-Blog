@@ -19,7 +19,7 @@ RSpec.describe ContactsController, type: :controller do
       # 'name' => 'Palais-Royal',
       'base' => 'stations',
       'cod' => 200,
-      'timezone' => 7200
+      # 'timezone' => 7200
     )
   end
   it 'includes clouds key' do
