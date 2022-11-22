@@ -10,8 +10,8 @@
     "highcharts": "^10.2.1",
     "jquery": "^3.6.1",
     "lightbox2": "^2.11.3",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
     "world-flags-sprite": "^0.0.2"
   },
   "version": "0.1.0",
