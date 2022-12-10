@@ -52,25 +52,25 @@ module ApplicationHelper
 
   def menu(i)
     tag.li class: 'nav-item' do
-      link_to i.title, { controller: 'posts', action: 'show', id: i.slug }, class: 'nav-link'
+      link_to i.title, { controller: 'posts', action: 'show', id: i.slug }, class: 'nav-link px-lg-3 py-3 py-lg-4'
     end
   end
 
   def contacts
     tag.li class: 'nav-item' do
-      link_to 'Contacts', { controller: 'contacts' }, class: 'nav-link'
+      link_to 'Contacts', { controller: 'contacts' }, class: 'nav-link px-lg-3 py-3 py-lg-4'
     end
   end
 
   def analytics
     tag.li class: 'nav-item' do
-      link_to 'Analytics', { controller: 'analytics' }, class: 'nav-link'
+      link_to 'Analytics', { controller: 'analytics' }, class: 'nav-link px-lg-3 py-3 py-lg-4'
     end
   end
 
   def slideshow
     tag.li class: 'nav-item' do
-      link_to 'Slideshow', { controller: 'slideshows' }, class: 'nav-link'
+      link_to 'Slideshow', { controller: 'slideshows' }, class: 'nav-link px-lg-3 py-3 py-lg-4'
     end
   end
 
