@@ -65,9 +65,18 @@ img {
 }
 
 /* Slider */
-.carousel-inner{
+.carousel-inner img {
   width:100%;
-  max-height: 550px !important;
+}
+
+.carousel .carousel-item {
+  max-height: 550px;
+}
+
+.slider {
+  height: 550px;
+  margin-bottom: 2rem;
+  background-color: #fff;
 }
 
 .spinner-grow {
@@ -80,11 +89,24 @@ width: 3rem;
 height: 3rem;
 }
 
-.slider {
-  width:100%;
-  height:550px;
-  margin-bottom: 2rem;
-  background-color: #fff;
+/* Carousel dark overlay */
+.carousel-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Slider caption style */
+.carousel-caption {
+    left: 2%;
+    top: 5% !important;
+    transform: translateY(-50%);
+    text-align: left;
+    bottom: initial;
 }
 /* Slider End */
 
@@ -108,26 +130,6 @@ display: inline-block;
 width: 45px;
 }
 /* Social network share buttons End */
-
-/* Carousel dark overlay */
-.carousel-item:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-/* Slider caption style */
-.carousel-caption {
-    left: 2%;
-    top: 5% !important;
-    transform: translateY(-50%);
-    text-align: left;
-    bottom: initial;
-}
 
 /* Little fix for Home Page */
 .post-preview>a>.post-title {
