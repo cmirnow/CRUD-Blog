@@ -37,7 +37,7 @@ gem 'babosa', '~> 1.0.4'
 gem 'kaminari'
 gem 'aws-sdk-s3'
 gem 'activerecord_json_validator', '~> 2.0.0'
-gem "font-awesome-sass", "~> 6.2.0"
+gem "font-awesome-sass", "~> 6.2.1"
 # https://stackoverflow.com/questions/70500220/rails-7-ruby-3-1-loaderror-cannot-load-such-file-net-smtp
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
