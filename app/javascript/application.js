@@ -4,7 +4,6 @@ import "./channels"
 import "./add_jquery"
 import * as bootstrap from 'bootstrap'
 import "@popperjs/core"
-import "./stylesheets/application.scss"
 import "./spinner"
 import "./clean-blog.min"
 import * as lightbox from 'lightbox2'
