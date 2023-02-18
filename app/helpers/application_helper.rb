@@ -22,10 +22,10 @@ module ApplicationHelper
   end
 
   def scroll_up
-    unless current_page?(controller: 'contacts')
-      button_tag type: 'button', class: 'btn btn-light back-to-top', id: 'btn-back-to-top' do
-        content_tag(:i, '', class: 'fa-solid fa-arrow-up')
-      end
+    return if current_page?(controller: 'contacts')
+
+    button_tag type: 'button', class: 'btn btn-light back-to-top', id: 'btn-back-to-top' do
+      content_tag(:i, '', class: 'fa-solid fa-arrow-up')
     end
   end
 
@@ -80,5 +80,15 @@ module ApplicationHelper
 
   def greeting
     Date.today.strftime('%d of %B %Y, %A')
+  end
+
+  def copyright
+    tag.p class: 'small text-center text-muted fst-italic' do
+      concat "Copyright \u00A9 2020 -"
+      concat ' '
+      concat Time.zone.now.year
+      concat ' '
+      concat link_to('Masterpro Studio', ENV['HYPERLINK_BANNER'], target: '_blank')
+    end
   end
 end
