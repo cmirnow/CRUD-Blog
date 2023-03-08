@@ -69,19 +69,18 @@ img {
   width:100%;
 }
 
-.carousel .carousel-item {
-  max-height: 550px;
-}
-
 .slider {
-  height: 550px;
   margin-bottom: 2rem;
   background-color: #fff;
+/* hack using padding-bottom */
+  padding-bottom: 66.68%;
+  height: 0;
+  overflow: hidden;
 }
 
 .spinner-grow {
 position: absolute;
-top: 270px;
+top: 25%;
 left: 50%;
 margin-top: -1.5rem;
 margin-left: -1.5rem;
