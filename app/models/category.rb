@@ -13,4 +13,12 @@ class Category < ApplicationRecord
   def normalize_friendly_id(title)
     title.to_s.to_slug.normalize(transliterations: :russian).to_s
   end
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[created_at description id published_at slug title updated_at]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[image_attachment image_blob posts]
+  end
 end

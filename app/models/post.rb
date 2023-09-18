@@ -17,4 +17,13 @@ class Post < ApplicationRecord
   def normalize_friendly_id(title)
     title.to_s.to_slug.normalize(transliterations: :russian).to_s
   end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[base_tags category comments images_attachments images_blobs tag tag_taggings taggings]
+  end
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[category_id created_at description id keywords published_at slug text title
+       updated_at]
+  end
 end
