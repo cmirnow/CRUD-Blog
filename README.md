@@ -35,6 +35,8 @@
 [![CRUD Blog on Rails. Geo-Targeted Banner Ads](https://github.com/cmirnow/CRUD-Blog/blob/master/app/assets/images/edit_post.jpg)](https://masterpro.ws/deploy-blog-on-rails-to-heroku)
 
 
+[Live Demo](https://mstp.masterpro.ws).
+
 For Beginners: How to Start. [Deploying Rails Blog on Heroku](https://masterpro.ws/deploy-blog-on-rails-to-heroku).
 
 
