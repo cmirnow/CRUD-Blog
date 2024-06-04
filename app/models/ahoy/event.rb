@@ -9,4 +9,7 @@ class Ahoy::Event < ApplicationRecord
   def self.ransackable_attributes(_auth_object = nil)
     %w[id name properties time user_id visit_id]
   end
+  def self.ransackable_associations(auth_object = nil)
+    ["user", "visit"]
+  end
 end
