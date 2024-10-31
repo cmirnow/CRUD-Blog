@@ -7,6 +7,10 @@ class Comment < ApplicationRecord
   scope :published, -> { where.not(published_at: nil) }
   scope :unpublished, -> { where(published_at: nil) }
 
+  def self.ransackable_associations(auth_object = nil)
+    %w[post]
+  end
+
   def self.ransackable_attributes(_auth_object = nil)
     %w[body commenter created_at id post_id published_at updated_at]
   end
